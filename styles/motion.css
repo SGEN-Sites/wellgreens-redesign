@@ -1,0 +1,562 @@
+/* motion.css — replication of the source site motion.
+ * Keyframes below are VERBATIM from the live capture.
+ * Do not re-type them: a retyped keyframe is a different animation.
+ * Source: audit/motion-inventory.json
+ */
+
+/* from capture (inline) */
+@keyframes category-deals-glow {
+  0%, 100% { filter: drop-shadow(transparent 0px 0px 0px); }
+  50% { filter: drop-shadow(0 0 6px hsl(var(--primary)/22%)); }
+}
+/* from capture (inline) */
+@keyframes ping {
+  75%, 100% { transform: scale(2); opacity: 0; }
+}
+/* from capture (inline) */
+@keyframes pulse {
+  50% { opacity: 0.5; }
+}
+/* from capture (inline) */
+@keyframes spin {
+  100% { transform: rotate(1turn); }
+}
+/* from capture (inline) */
+@keyframes enter {
+  0% { opacity: var(--tw-enter-opacity,1); transform: translate3d(var(--tw-enter-translate-x,0),var(--tw-enter-translate-y,0),0) scale3d(var(--tw-enter-scale,1),var(--tw-enter-scale,1),var(--tw-enter-scale,1)) rotate(var(--tw-enter-rotate,0)); }
+}
+/* from capture (inline) */
+@keyframes exit {
+  100% { opacity: var(--tw-exit-opacity,1); transform: translate3d(var(--tw-exit-translate-x,0),var(--tw-exit-translate-y,0),0) scale3d(var(--tw-exit-scale,1),var(--tw-exit-scale,1),var(--tw-exit-scale,1)) rotate(var(--tw-exit-rotate,0)); }
+}
+/* from capture (inline) */
+@keyframes text-reveal-char {
+  0% { opacity: 0; transform: translateY(50px) rotateX(-90deg); }
+  100% { opacity: 1; transform: none; }
+}
+/* from capture (inline) */
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(60px); }
+  100% { opacity: 1; transform: none; }
+}
+/* from capture (inline) */
+@keyframes blur-in {
+  0% { opacity: 0; filter: blur(20px); }
+  100% { opacity: 1; filter: none; }
+}
+/* from capture (inline) */
+@keyframes reveal-left {
+  0% { opacity: 0; transform: translateX(-100px); clip-path: inset(0px 100% 0px 0px); }
+  100% { opacity: 1; transform: none; clip-path: inset(0px); }
+}
+/* from capture (inline) */
+@keyframes reveal-right {
+  0% { opacity: 0; transform: translateX(100px); clip-path: inset(0px 0px 0px 100%); }
+  100% { opacity: 1; transform: none; clip-path: inset(0px); }
+}
+/* from capture (inline) */
+@keyframes line-scale-x {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+/* from capture (inline) */
+@keyframes bounce-y {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-3px); }
+}
+/* from capture (inline) */
+@keyframes marquee {
+  0% { transform: translateX(0px); }
+  100% { transform: translateX(-50%); }
+}
+/* from capture (inline) */
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(15deg); }
+  75% { transform: rotate(-15deg); }
+  100% { transform: rotate(0deg); }
+}
+/* from capture (inline) */
+@keyframes pulse-opacity {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+/* from capture (inline) */
+@keyframes radar-pulse {
+  0% { transform: scale(0); opacity: 0.5; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+/* from capture (inline) */
+@keyframes scan-line {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(1000%); }
+}
+/* from capture (inline) */
+@keyframes slide-in-top {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: none; }
+}
+/* from capture (inline) */
+@keyframes slide-out-top {
+  0% { opacity: 1; transform: translateY(0px); }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
+/* from capture (inline) */
+@keyframes modal-content-in {
+  0% { opacity: 0; transform: scale(0.95) translateY(10px); }
+  100% { opacity: 1; transform: none; }
+}
+/* from capture (inline) */
+@keyframes carousel-enter-right {
+  0% { transform: translateX(100px) scale(0.8) rotateY(45deg); opacity: 0; }
+  100% { transform: none; opacity: 1; }
+}
+/* from capture (inline) */
+@keyframes carousel-enter-left {
+  0% { transform: translateX(-100px) scale(0.8) rotateY(-45deg); opacity: 0; }
+  100% { transform: none; opacity: 1; }
+}
+/* from capture (inline) */
+@keyframes carousel-exit-right {
+  0% { transform: translateX(0px) scale(1) rotateY(0deg); opacity: 1; }
+  100% { transform: translateX(300px) scale(1.1) rotateY(45deg); opacity: 0; }
+}
+/* from capture (inline) */
+@keyframes carousel-exit-left {
+  0% { transform: translateX(0px) scale(1) rotateY(0deg); opacity: 1; }
+  100% { transform: translateX(-300px) scale(1.1) rotateY(-45deg); opacity: 0; }
+}
+/* from capture (inline) */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+/* from capture (inline) */
+@keyframes gradient {
+  0% { background-position: 0px 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0px 50%; }
+}
+/* from capture (inline) */
+@keyframes shimmer {
+  0% { background-position: -200% 0px; }
+  100% { background-position: 200% 0px; }
+}
+/* from capture (inline) */
+@keyframes brand-ticker {
+  0% { transform: translateX(0px); }
+  100% { transform: translateX(-50%); }
+}
+/* from capture (inline) */
+@keyframes wg-curtain-open-top {
+  0% { transform: translateY(0px); visibility: visible; }
+  100% { transform: translateY(-101%); visibility: hidden; }
+}
+/* from capture (inline) */
+@keyframes wg-curtain-open-bottom {
+  0% { transform: translateY(0px); visibility: visible; }
+  100% { transform: translateY(101%); visibility: hidden; }
+}
+/* from capture (inline) */
+@keyframes wg-curtain-close-top {
+  0% { transform: translateY(-101%); }
+  100% { transform: translateY(0px); }
+}
+/* from capture (inline) */
+@keyframes wg-curtain-close-bottom {
+  0% { transform: translateY(101%); }
+  100% { transform: translateY(0px); }
+}
+/* from capture (inline) */
+@keyframes wg-curtain-release {
+  0% { opacity: 1; visibility: visible; }
+  100% { opacity: 0; visibility: hidden; }
+}
+/* from capture (inline) */
+@keyframes wg-curtain-sweep {
+  0% { opacity: 0; transform: translateX(calc(var(--wg-wordmark-width) * -.75)) skewX(-20deg); }
+  20%, 80% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(calc(var(--wg-wordmark-width) * .75)) skewX(-20deg); }
+}
+/* from capture (inline) */
+@keyframes accordion-down {
+  0% { height: 0px; }
+  100% { height: var(--radix-accordion-content-height); }
+}
+/* from css */
+@keyframes FirstTimeCustomers_reveal__DlFVL{0%{opacity:0;translate:0 40px}}
+
+/* --- easing tokens observed on the source ------------------------------ */
+:root {
+  --ease-1: cubic-bezier(.4,0,.2,1);
+  --ease-2: cubic-bezier(.25,.4,.25,1);
+  --ease-3: cubic-bezier(0,0,.2,1);
+  --ease-4: cubic-bezier(.25,1,.5,1);
+  --ease-5: cubic-bezier(.22,1,.36,1);
+  --ease-6: cubic-bezier(.4,0,.6,1);
+  --ease-7: cubic-bezier(0.76,0,0.24,1);
+  --dur-1: 0.3s, 0.3s;
+  --dur-2: 0.15s;
+  --dur-3: 0.2s;
+  --dur-4: 0.7s;
+  --dur-5: 0.5s;
+  --dur-6: 1s;
+}
+
+/* --- per-element motion measured on the source -------------------------- */
+/* Each block below is what the ORIGINAL element resolved to. Re-apply these
+   to the equivalent rebuilt component; the selector names will differ, the
+   VALUES must not. */
+/* #site-content > header.site-header > div.header-banner.bg-bright-500:nth-of-type(1)  @1024px */
+.REPLACE-ME {
+  transition: max-height, opacity 0.3s, 0.3s ease, ease 0s, 0s;
+}
+/* #site-content > header.site-header > div.header-banner.bg-bright-500:nth-of-type(1) > a.block.overflow-hidden  @1024px */
+.REPLACE-ME {
+  transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #site-content > header.site-header > div.header-banner.bg-bright-500:nth-of-type(1) > a.block.overflow-hidden > div.flex.w-max  @1024px */
+.REPLACE-ME {
+  animation: marquee 84s linear 0s infinite;
+  transform: matrix(1, 0, 0, 1, -116.855, 0);
+}
+/* #site-content > header.site-header > nav.header-nav.mx-auto > div.grid.w-full > button.inline-flex.items-center  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #site-content > header.site-header > nav.header-nav.mx-auto > div.grid.w-full > div.col-start-2.row-start-1:nth-of-type(1) > a.flex.min-w-0  @1024px */
+.REPLACE-ME {
+  transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #site-content > header.site-header > nav.header-nav.mx-auto > div.grid.w-full > div.col-start-3.row-start-1:nth-of-type(3) > a.relative.xl:hidden:nth-of-type(1)  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #site-content > header.site-header > nav.header-nav.mx-auto > div.grid.w-full > div.col-start-3.row-start-1:nth-of-type(3) > a.whitespace-nowrap.ring-offset-background:nth-of-type(2)  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #header-search-panel > div.mx-auto.flex > div.relative.flex > div.flex.h-10  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #site-content > div.header-service-row.bg-background > div.mx-auto.flex > button.flex.h-9  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > div.sticky.top-0 > div.h-full.w-full  @1024px */
+.REPLACE-ME {
+  transform: matrix(0, 0, 0, 1, 0, 0);
+}
+/* #main-content > div.flex.flex-col > section.relative.h-[calc(100vh-var(--header-extra-h))]:nth-of-type(1) > div.relative.z-10:nth-of-type(2) > div.relative.mb-8:nth-of-type(2) > div.text-[clamp(2.5rem,15vw,4.5rem)].md:text-[clamp(2.5rem,12vw,7rem)]:nth-of-type(1) > span.inline-block.mr-[0.25em] > span.text-reveal-char:nth-of-type(1)  @1024px */
+.REPLACE-ME {
+  animation: text-reveal-char 0.5s cubic-bezier(0.25, 0.4, 0.25, 1) 0s 1 forwards;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+/* #main-content > div.flex.flex-col > section.relative.h-[calc(100vh-var(--header-extra-h))]:nth-of-type(1) > div.relative.z-10:nth-of-type(2) > div.relative.mb-8:nth-of-type(2) > div.text-[clamp(2.5rem,15vw,4.5rem)].md:text-[clamp(2.5rem,12vw,7rem)]:nth-of-type(1) > span.inline-block.mr-[0.25em] > span.text-reveal-char:nth-of-type(2)  @1024px */
+.REPLACE-ME {
+  animation: text-reveal-char 0.5s cubic-bezier(0.25, 0.4, 0.25, 1) 0.03s 1 forwards;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+/* #main-content > div.flex.flex-col > section.relative.h-[calc(100vh-var(--header-extra-h))]:nth-of-type(1) > div.relative.z-10:nth-of-type(2) > div.relative.mb-8:nth-of-type(2) > div.text-[clamp(2.5rem,15vw,4.5rem)].md:text-[clamp(2.5rem,12vw,7rem)]:nth-of-type(1) > span.inline-block.mr-[0.25em] > span.text-reveal-char:nth-of-type(3)  @1024px */
+.REPLACE-ME {
+  animation: text-reveal-char 0.5s cubic-bezier(0.25, 0.4, 0.25, 1) 0.06s 1 forwards;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+/* #main-content > div.flex.flex-col > section.relative.h-[calc(100vh-var(--header-extra-h))]:nth-of-type(1) > div.relative.z-10:nth-of-type(2) > div.relative.mb-8:nth-of-type(2) > div.text-[clamp(2.5rem,15vw,4.5rem)].md:text-[clamp(2.5rem,12vw,7rem)]:nth-of-type(1) > span.inline-block.mr-[0.25em] > span.text-reveal-char:nth-of-type(4)  @1024px */
+.REPLACE-ME {
+  animation: text-reveal-char 0.5s cubic-bezier(0.25, 0.4, 0.25, 1) 0.09s 1 forwards;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+/* #main-content > div.flex.flex-col > section.relative.h-[calc(100vh-var(--header-extra-h))]:nth-of-type(1) > div.relative.z-10:nth-of-type(2) > div.relative.mb-8:nth-of-type(2) > div.text-[clamp(2.5rem,15vw,4.5rem)].md:text-[clamp(2.5rem,12vw,7rem)]:nth-of-type(1) > span.inline-block.mr-[0.25em] > span.text-reveal-char:nth-of-type(5)  @1024px */
+.REPLACE-ME {
+  animation: text-reveal-char 0.5s cubic-bezier(0.25, 0.4, 0.25, 1) 0.12s 1 forwards;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+/* #main-content > div.flex.flex-col > section.relative.h-[calc(100vh-var(--header-extra-h))]:nth-of-type(1) > div.relative.z-10:nth-of-type(2) > div.relative.mb-8:nth-of-type(2) > div.text-[clamp(2.5rem,15vw,4.5rem)].md:text-[clamp(2.5rem,12vw,7rem)]:nth-of-type(1) > span.inline-block.mr-[0.25em] > span.text-reveal-char:nth-of-type(6)  @1024px */
+.REPLACE-ME {
+  animation: text-reveal-char 0.5s cubic-bezier(0.25, 0.4, 0.25, 1) 0.15s 1 forwards;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+/* #main-content > div.flex.flex-col > section.relative.h-[calc(100vh-var(--header-extra-h))]:nth-of-type(1) > div.relative.z-10:nth-of-type(2) > div.relative.mb-8:nth-of-type(2) > div.text-[clamp(2.5rem,15vw,4.5rem)].md:text-[clamp(2.5rem,12vw,7rem)]:nth-of-type(1) > span.inline-block.mr-[0.25em] > span.text-reveal-char:nth-of-type(7)  @1024px */
+.REPLACE-ME {
+  animation: text-reveal-char 0.5s cubic-bezier(0.25, 0.4, 0.25, 1) 0.18s 1 forwards;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+/* #main-content > div.flex.flex-col > section.relative.h-[calc(100vh-var(--header-extra-h))]:nth-of-type(1) > div.relative.z-10:nth-of-type(2) > div.relative.mb-8:nth-of-type(2) > div.text-[clamp(2.5rem,15vw,4.5rem)].md:text-[clamp(2.5rem,12vw,7rem)]:nth-of-type(1) > span.inline-block.mr-[0.25em] > span.text-reveal-char:nth-of-type(8)  @1024px */
+.REPLACE-ME {
+  animation: text-reveal-char 0.5s cubic-bezier(0.25, 0.4, 0.25, 1) 0.21s 1 forwards;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+/* #main-content > div.flex.flex-col > section.relative.h-[calc(100vh-var(--header-extra-h))]:nth-of-type(1) > div.relative.z-10:nth-of-type(2) > div.relative.mb-8:nth-of-type(2) > div.text-[clamp(2.5rem,15vw,4.5rem)].md:text-[clamp(2.5rem,12vw,7rem)]:nth-of-type(1) > span.inline-block.mr-[0.25em] > span.text-reveal-char:nth-of-type(9)  @1024px */
+.REPLACE-ME {
+  animation: text-reveal-char 0.5s cubic-bezier(0.25, 0.4, 0.25, 1) 0.24s 1 forwards;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+/* #main-content > div.flex.flex-col > section.relative.h-[calc(100vh-var(--header-extra-h))]:nth-of-type(1) > div.relative.z-10:nth-of-type(2) > div.relative.mb-8:nth-of-type(2) > div.text-[clamp(2.5rem,15vw,4.5rem)].md:text-[clamp(2.5rem,12vw,7rem)]:nth-of-type(2) > span.inline-block.mr-[0.25em] > span.text-reveal-char:nth-of-type(1)  @1024px */
+.REPLACE-ME {
+  animation: text-reveal-char 0.5s cubic-bezier(0.25, 0.4, 0.25, 1) 0s 1 forwards;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+/* #main-content > div.flex.flex-col > section.relative.h-[calc(100vh-var(--header-extra-h))]:nth-of-type(1) > div.relative.z-10:nth-of-type(2) > div.relative.mb-8:nth-of-type(2) > div.text-[clamp(2.5rem,15vw,4.5rem)].md:text-[clamp(2.5rem,12vw,7rem)]:nth-of-type(2) > span.inline-block.mr-[0.25em] > span.text-reveal-char:nth-of-type(2)  @1024px */
+.REPLACE-ME {
+  animation: text-reveal-char 0.5s cubic-bezier(0.25, 0.4, 0.25, 1) 0.03s 1 forwards;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+/* #main-content > div.flex.flex-col > section.relative.h-[calc(100vh-var(--header-extra-h))]:nth-of-type(1) > div.relative.z-10:nth-of-type(2) > div.relative.mb-8:nth-of-type(2) > div.text-[clamp(2.5rem,15vw,4.5rem)].md:text-[clamp(2.5rem,12vw,7rem)]:nth-of-type(2) > span.inline-block.mr-[0.25em] > span.text-reveal-char:nth-of-type(3)  @1024px */
+.REPLACE-ME {
+  animation: text-reveal-char 0.5s cubic-bezier(0.25, 0.4, 0.25, 1) 0.06s 1 forwards;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+/* #main-content > div.flex.flex-col > section.relative.h-[calc(100vh-var(--header-extra-h))]:nth-of-type(1) > div.relative.z-10:nth-of-type(2) > div.relative.mb-8:nth-of-type(2) > div.text-[clamp(2.5rem,15vw,4.5rem)].md:text-[clamp(2.5rem,12vw,7rem)]:nth-of-type(2) > span.inline-block.mr-[0.25em] > span.text-reveal-char:nth-of-type(4)  @1024px */
+.REPLACE-ME {
+  animation: text-reveal-char 0.5s cubic-bezier(0.25, 0.4, 0.25, 1) 0.09s 1 forwards;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+/* #main-content > div.flex.flex-col > section.relative.h-[calc(100vh-var(--header-extra-h))]:nth-of-type(1) > div.relative.z-10:nth-of-type(2) > div.relative.mb-8:nth-of-type(2) > div.text-[clamp(2.5rem,15vw,4.5rem)].md:text-[clamp(2.5rem,12vw,7rem)]:nth-of-type(2) > span.inline-block.mr-[0.25em] > span.text-reveal-char:nth-of-type(5)  @1024px */
+.REPLACE-ME {
+  animation: text-reveal-char 0.5s cubic-bezier(0.25, 0.4, 0.25, 1) 0.12s 1 forwards;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+/* #main-content > div.flex.flex-col > section.relative.h-[calc(100vh-var(--header-extra-h))]:nth-of-type(1) > div.relative.z-10:nth-of-type(2) > div.relative.mb-8:nth-of-type(2) > div.text-[clamp(2.5rem,15vw,4.5rem)].md:text-[clamp(2.5rem,12vw,7rem)]:nth-of-type(2) > span.inline-block.mr-[0.25em] > span.text-reveal-char:nth-of-type(6)  @1024px */
+.REPLACE-ME {
+  animation: text-reveal-char 0.5s cubic-bezier(0.25, 0.4, 0.25, 1) 0.15s 1 forwards;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+/* #main-content > div.flex.flex-col > section.relative.h-[calc(100vh-var(--header-extra-h))]:nth-of-type(1) > div.relative.z-10:nth-of-type(2) > div.relative.mb-8:nth-of-type(2) > div.text-[clamp(2.5rem,15vw,4.5rem)].md:text-[clamp(2.5rem,12vw,7rem)]:nth-of-type(2) > span.inline-block.mr-[0.25em] > span.text-reveal-char:nth-of-type(7)  @1024px */
+.REPLACE-ME {
+  animation: text-reveal-char 0.5s cubic-bezier(0.25, 0.4, 0.25, 1) 0.18s 1 forwards;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+/* #main-content > div.flex.flex-col > section.relative.h-[calc(100vh-var(--header-extra-h))]:nth-of-type(1) > div.relative.z-10:nth-of-type(2) > div.relative.mb-8:nth-of-type(2) > div.text-[clamp(2.5rem,15vw,4.5rem)].md:text-[clamp(2.5rem,12vw,7rem)]:nth-of-type(2) > span.inline-block.mr-[0.25em] > span.text-reveal-char:nth-of-type(8)  @1024px */
+.REPLACE-ME {
+  animation: text-reveal-char 0.5s cubic-bezier(0.25, 0.4, 0.25, 1) 0.21s 1 forwards;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+/* #main-content > div.flex.flex-col > section.relative.h-[calc(100vh-var(--header-extra-h))]:nth-of-type(1) > div.hidden.lg:block:nth-of-type(3)  @1024px */
+.REPLACE-ME {
+  transform: matrix(0, -1, 1, 0, 0, 0);
+}
+/* #main-content > div.flex.flex-col > section.relative.h-[calc(100vh-var(--header-extra-h))]:nth-of-type(1) > div.hidden.lg:block:nth-of-type(4)  @1024px */
+.REPLACE-ME {
+  transform: matrix(0, 1, -1, 0, 0, 0);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(2) > div.mx-auto.max-w-7xl > div.grid.lg:grid-cols-2 > div.relative.h-[400px]:nth-of-type(2) > img.object-cover.grayscale  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(2) > div.mx-auto.max-w-7xl > div.grid.lg:grid-cols-2 > div.relative.h-[400px]:nth-of-type(3) > img.object-cover.grayscale  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-2.md:row-span-1:nth-of-type(1) > img.object-cover.transition  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-2.md:row-span-1:nth-of-type(1) > div.absolute.inset-0:nth-of-type(2) > div.text-[10px].font-black:nth-of-type(1)  @1024px */
+.REPLACE-ME {
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-2.md:row-span-1:nth-of-type(1) > div.absolute.inset-0:nth-of-type(2) > div:nth-of-type(2) > p.text-paper/85.text-sm  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: matrix(1, 0, 0, 1, 0, 16);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-2.md:row-span-1:nth-of-type(1) > div.absolute.top-0:nth-of-type(3)  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-2.md:row-span-1:nth-of-type(1) > div.absolute.bottom-0:nth-of-type(4)  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-1.md:row-span-1:nth-of-type(2) > img.object-cover.transition  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-1.md:row-span-1:nth-of-type(2) > div.absolute.inset-0:nth-of-type(2) > div.text-[10px].font-black:nth-of-type(1)  @1024px */
+.REPLACE-ME {
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-1.md:row-span-1:nth-of-type(2) > div.absolute.inset-0:nth-of-type(2) > div:nth-of-type(2) > p.text-paper/85.text-sm  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: matrix(1, 0, 0, 1, 0, 16);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-1.md:row-span-1:nth-of-type(2) > div.absolute.top-0:nth-of-type(3)  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-1.md:row-span-1:nth-of-type(2) > div.absolute.bottom-0:nth-of-type(4)  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-1.md:row-span-2:nth-of-type(3) > img.object-cover.transition  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-1.md:row-span-2:nth-of-type(3) > div.absolute.inset-0:nth-of-type(2) > div.text-[10px].font-black:nth-of-type(1)  @1024px */
+.REPLACE-ME {
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-1.md:row-span-2:nth-of-type(3) > div.absolute.inset-0:nth-of-type(2) > div:nth-of-type(2) > p.text-paper/85.text-sm  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: matrix(1, 0, 0, 1, 0, 16);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-1.md:row-span-2:nth-of-type(3) > div.absolute.top-0:nth-of-type(3)  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-1.md:row-span-2:nth-of-type(3) > div.absolute.bottom-0:nth-of-type(4)  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-1.md:row-span-1:nth-of-type(4) > img.object-cover.transition  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-1.md:row-span-1:nth-of-type(4) > div.absolute.inset-0:nth-of-type(2) > div.text-[10px].font-black:nth-of-type(1)  @1024px */
+.REPLACE-ME {
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-1.md:row-span-1:nth-of-type(4) > div.absolute.inset-0:nth-of-type(2) > div:nth-of-type(2) > p.text-paper/85.text-sm  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: matrix(1, 0, 0, 1, 0, 16);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-1.md:row-span-1:nth-of-type(4) > div.absolute.top-0:nth-of-type(3)  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-1.md:row-span-1:nth-of-type(4) > div.absolute.bottom-0:nth-of-type(4)  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-1.md:row-span-1:nth-of-type(5) > img.object-cover.transition  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-1.md:row-span-1:nth-of-type(5) > div.absolute.inset-0:nth-of-type(2) > div.text-[10px].font-black:nth-of-type(1)  @1024px */
+.REPLACE-ME {
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-1.md:row-span-1:nth-of-type(5) > div.absolute.inset-0:nth-of-type(2) > div:nth-of-type(2) > p.text-paper/85.text-sm  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: matrix(1, 0, 0, 1, 0, 16);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-1.md:row-span-1:nth-of-type(5) > div.absolute.top-0:nth-of-type(3)  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-1.md:row-span-1:nth-of-type(5) > div.absolute.bottom-0:nth-of-type(4)  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-2.md:row-span-1:nth-of-type(6) > img.object-cover.transition  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-2.md:row-span-1:nth-of-type(6) > div.absolute.inset-0:nth-of-type(2) > div.text-[10px].font-black:nth-of-type(1)  @1024px */
+.REPLACE-ME {
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-2.md:row-span-1:nth-of-type(6) > div.absolute.inset-0:nth-of-type(2) > div:nth-of-type(2) > p.text-paper/85.text-sm  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: matrix(1, 0, 0, 1, 0, 16);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-2.md:row-span-1:nth-of-type(6) > div.absolute.top-0:nth-of-type(3)  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.section-pad.relative:nth-of-type(3) > div.mx-auto.max-w-7xl:nth-of-type(2) > div.grid.grid-cols-1 > div.md:col-span-2.md:row-span-1:nth-of-type(6) > div.absolute.bottom-0:nth-of-type(4)  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.bg-background.relative:nth-of-type(4) > div.flex.flex-col:nth-of-type(3) > div.flex.flex-col:nth-of-type(1) > div.flex-1.relative:nth-of-type(1) > img.object-cover.grayscale  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.bg-background.relative:nth-of-type(4) > div.flex.flex-col:nth-of-type(3) > div.flex.flex-col:nth-of-type(1) > div.flex-1.relative:nth-of-type(1) > div.absolute.inset-0:nth-of-type(1)  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.bg-background.relative:nth-of-type(4) > div.flex.flex-col:nth-of-type(3) > div.flex.flex-col:nth-of-type(1) > div.flex-1.relative:nth-of-type(1) > div.absolute.top-12:nth-of-type(2) > span.text-5xl.font-black  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.bg-background.relative:nth-of-type(4) > div.flex.flex-col:nth-of-type(3) > div.flex.flex-col:nth-of-type(1) > div.flex-1.relative:nth-of-type(1) > div.absolute.top-12:nth-of-type(2) > div.h-px.w-12  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.bg-background.relative:nth-of-type(4) > div.flex.flex-col:nth-of-type(3) > div.flex.flex-col:nth-of-type(1) > div.flex-1.relative:nth-of-type(1) > div.hidden.lg:block:nth-of-type(3)  @1024px */
+.REPLACE-ME {
+  transform: matrix(0, -1, 1, 0, 0, 0);
+}
+/* #main-content > div.flex.flex-col > section.bg-background.relative:nth-of-type(4) > div.flex.flex-col:nth-of-type(3) > div.flex.flex-col:nth-of-type(2) > div.flex-1.relative:nth-of-type(1) > img.object-cover.grayscale  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.bg-background.relative:nth-of-type(4) > div.flex.flex-col:nth-of-type(3) > div.flex.flex-col:nth-of-type(2) > div.flex-1.relative:nth-of-type(1) > div.absolute.inset-0:nth-of-type(1)  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.bg-background.relative:nth-of-type(4) > div.flex.flex-col:nth-of-type(3) > div.flex.flex-col:nth-of-type(2) > div.flex-1.relative:nth-of-type(1) > div.absolute.top-12:nth-of-type(2) > span.text-5xl.font-black  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.bg-background.relative:nth-of-type(4) > div.flex.flex-col:nth-of-type(3) > div.flex.flex-col:nth-of-type(2) > div.flex-1.relative:nth-of-type(1) > div.absolute.top-12:nth-of-type(2) > div.h-px.w-12  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.bg-background.relative:nth-of-type(4) > div.flex.flex-col:nth-of-type(3) > div.flex.flex-col:nth-of-type(2) > div.flex-1.relative:nth-of-type(1) > div.hidden.lg:block:nth-of-type(3)  @1024px */
+.REPLACE-ME {
+  transform: matrix(0, -1, 1, 0, 0, 0);
+}
+/* #main-content > div.flex.flex-col > section.bg-background.relative:nth-of-type(4) > div.flex.flex-col:nth-of-type(3) > div.flex.flex-col:nth-of-type(3) > div.flex-1.relative:nth-of-type(1) > img.object-cover.grayscale  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.bg-background.relative:nth-of-type(4) > div.flex.flex-col:nth-of-type(3) > div.flex.flex-col:nth-of-type(3) > div.flex-1.relative:nth-of-type(1) > div.absolute.inset-0:nth-of-type(1)  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.bg-background.relative:nth-of-type(4) > div.flex.flex-col:nth-of-type(3) > div.flex.flex-col:nth-of-type(3) > div.flex-1.relative:nth-of-type(1) > div.absolute.top-12:nth-of-type(2) > span.text-5xl.font-black  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.bg-background.relative:nth-of-type(4) > div.flex.flex-col:nth-of-type(3) > div.flex.flex-col:nth-of-type(3) > div.flex-1.relative:nth-of-type(1) > div.absolute.top-12:nth-of-type(2) > div.h-px.w-12  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.bg-background.relative:nth-of-type(4) > div.flex.flex-col:nth-of-type(3) > div.flex.flex-col:nth-of-type(3) > div.flex-1.relative:nth-of-type(1) > div.hidden.lg:block:nth-of-type(3)  @1024px */
+.REPLACE-ME {
+  transform: matrix(0, -1, 1, 0, 0, 0);
+}
+/* #main-content > div.flex.flex-col > section.bg-background.relative:nth-of-type(4) > div.flex.flex-col:nth-of-type(3) > div.flex.flex-col:nth-of-type(4) > div.flex-1.relative:nth-of-type(1) > img.object-cover.grayscale  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.bg-background.relative:nth-of-type(4) > div.flex.flex-col:nth-of-type(3) > div.flex.flex-col:nth-of-type(4) > div.flex-1.relative:nth-of-type(1) > div.absolute.inset-0:nth-of-type(1)  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.bg-background.relative:nth-of-type(4) > div.flex.flex-col:nth-of-type(3) > div.flex.flex-col:nth-of-type(4) > div.flex-1.relative:nth-of-type(1) > div.absolute.top-12:nth-of-type(2) > span.text-5xl.font-black  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* #main-content > div.flex.flex-col > section.bg-background.relative:nth-of-type(4) > div.flex.flex-col:nth-of-type(3) > div.flex.flex-col:nth-of-type(4) > div.flex-1.relative:nth-of-type(1) > div.absolute.top-12:nth-of-type(2) > div.h-px.w-12  @1024px */
+.REPLACE-ME {
+  transition: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

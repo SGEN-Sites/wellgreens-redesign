@@ -1,0 +1,791 @@
+{
+ "generated": "2026-11-24T10:39:26.474Z",
+ "source": "live JS bundle, https://www.wellgreens.store",
+ "stores": {
+  "pacific-beach-de-soto-st": {
+   "name": "Wellgreens Pacific Beach",
+   "images": [
+    "/store-photos/pacific-beach/pacific-beach-exterior-01.webp",
+    "/store-photos/pacific-beach/pacific-beach-exterior-05.webp",
+    "/store-photos/pacific-beach/pacific-beach-01.webp",
+    "/store-photos/pacific-beach/pacific-beach-02.webp",
+    "/store-photos/pacific-beach/pacific-beach-03.webp",
+    "/store-photos/pacific-beach/pacific-beach-04.webp",
+    "/store-photos/pacific-beach/pacific-beach-06.webp"
+   ]
+  },
+  "mission-valley-camino-del-rio-s": {
+   "name": "Wellgreens Mission Valley",
+   "images": [
+    "/store-photos/mission-valley/mission-valley-exterior-01.webp",
+    "/store-photos/mission-valley/mission-valley-exterior-03.webp",
+    "/store-photos/mission-valley/mission-valley-exterior-05.webp",
+    "/store-photos/mission-valley/mission-valley-01.webp",
+    "/store-photos/mission-valley/mission-valley-02.webp",
+    "/store-photos/mission-valley/mission-valley-03.webp",
+    "/store-photos/mission-valley/mission-valley-04.webp"
+   ]
+  },
+  "kearny-mesa-balboa-ave": {
+   "name": "Wellgreens Kearny Mesa",
+   "images": [
+    "/store-photos/kearny-mesa/kearny-mesa-exterior-01.webp",
+    "/store-photos/kearny-mesa/kearny-mesa-exterior-03.webp",
+    "/store-photos/kearny-mesa/kearny-mesa-01.webp",
+    "/store-photos/kearny-mesa/kearny-mesa-02.webp",
+    "/store-photos/kearny-mesa/kearny-mesa-03.webp",
+    "/store-photos/kearny-mesa/kearny-mesa-04.webp",
+    "/store-photos/kearny-mesa/kearny-mesa-06.webp"
+   ]
+  },
+  "city-heights-home-ave": {
+   "name": "Wellgreens City Heights",
+   "images": [
+    "/store-photos/city-heights/city-heights-exterior-01.webp",
+    "/store-photos/city-heights/city-heights-exterior-02.webp",
+    "/store-photos/city-heights/city-heights-exterior-13.webp",
+    "/store-photos/city-heights/city-heights-01.webp",
+    "/store-photos/city-heights/city-heights-03.webp",
+    "/store-photos/city-heights/city-heights-04.webp"
+   ]
+  },
+  "encinitas-n-el-camino-real": {
+   "name": "Wellgreens Encinitas",
+   "images": [
+    "/store-photos/encinitas/encinitas-exterior-01.webp",
+    "/store-photos/encinitas/encinitas-exterior-05.webp",
+    "/store-photos/encinitas/encinitas-01.webp",
+    "/store-photos/encinitas/encinitas-02.webp",
+    "/store-photos/encinitas/encinitas-03.webp",
+    "/store-photos/encinitas/encinitas-04.webp",
+    "/store-photos/encinitas/encinitas-05.webp",
+    "/store-photos/encinitas/encinitas-06.webp"
+   ]
+  },
+  "la-mesa-university-ave": {
+   "name": "Wellgreens La Mesa - University Ave",
+   "images": [
+    "/store-photos/la-mesa-university/la-mesa-university-exterior-01.webp",
+    "/store-photos/la-mesa-university/la-mesa-university-exterior-02.webp",
+    "/store-photos/la-mesa-university/la-mesa-university-exterior-05.webp",
+    "/store-photos/la-mesa-university/la-mesa-university-01.webp",
+    "/store-photos/la-mesa-university/la-mesa-university-03.webp",
+    "/store-photos/la-mesa-university/la-mesa-university-05.webp"
+   ]
+  },
+  "la-mesa-lake-murray-blvd": {
+   "name": "Wellgreens La Mesa - Lake Murray Blvd",
+   "images": [
+    "/store-photos/la-mesa-lake-murray/la-mesa-lake-murray-exterior-01.webp",
+    "/store-photos/la-mesa-lake-murray/la-mesa-lake-murray-exterior-05.webp",
+    "/store-photos/la-mesa-lake-murray/la-mesa-lake-murray-01.webp",
+    "/store-photos/la-mesa-lake-murray/la-mesa-lake-murray-02.webp",
+    "/store-photos/la-mesa-lake-murray/la-mesa-lake-murray-03.webp",
+    "/store-photos/la-mesa-lake-murray/la-mesa-lake-murray-04.webp"
+   ]
+  },
+  "lemon-grove-federal-blvd": {
+   "name": "Wellgreens Lemon Grove",
+   "images": [
+    "/store-photos/lemon-grove/lemon-grove-exterior-01.webp",
+    "/store-photos/lemon-grove/lemon-grove-exterior-07.webp",
+    "/store-photos/lemon-grove/lemon-grove-01.webp",
+    "/store-photos/lemon-grove/lemon-grove-02.webp",
+    "/store-photos/lemon-grove/lemon-grove-03.webp",
+    "/store-photos/lemon-grove/lemon-grove-04.webp",
+    "/store-photos/lemon-grove/lemon-grove-05.webp"
+   ]
+  },
+  "vista-s-santa-fe-ave": {
+   "name": "Wellgreens Vista",
+   "images": [
+    "/store-photos/vista/vista-exterior-01.webp",
+    "/store-photos/vista/vista-01.webp",
+    "/store-photos/vista/vista-02.webp",
+    "/store-photos/vista/vista-03.webp",
+    "/store-photos/vista/vista-04.webp",
+    "/store-photos/vista/vista-05.webp",
+    "/store-photos/vista/vista-06.webp"
+   ]
+  },
+  "chula-vista-broadway": {
+   "name": "Wellgreens Chula Vista",
+   "images": [
+    "/store-photos/chula-vista/chula-vista-exterior-01.webp",
+    "/store-photos/chula-vista/chula-vista-exterior-07.webp",
+    "/store-photos/chula-vista/chula-vista-01.webp",
+    "/store-photos/chula-vista/chula-vista-02.webp",
+    "/store-photos/chula-vista/chula-vista-03.webp",
+    "/store-photos/chula-vista/chula-vista-04.webp",
+    "/store-photos/chula-vista/chula-vista-05.webp",
+    "/store-photos/chula-vista/chula-vista-09.webp"
+   ]
+  }
+ },
+ "tours": {
+  "pacific-beach-de-soto-st": [
+   {
+    "id": "view-01",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399405426!6m8!1m7!1sCAoSHENJQUJJaEJySlluak1mVVhlRjVVQ3NnVk9RcEk.!2m2!1d32.80790225498883!2d-117.2176666918006!3f40!4f0!5f0.7820865974627469",
+    "label": "Parking lot",
+    "labelEs": "Estacionamiento"
+   },
+   {
+    "id": "view-02",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399451634!6m8!1m7!1sCAoSHENJQUJJaENRc0htZjNucGxJd2Uxc29TakZsX1k.!2m2!1d32.80794175811018!2d-117.2175775968354!3f120!4f0!5f0.7820865974627469",
+    "label": "Back of store",
+    "labelEs": "Fondo de tienda"
+   },
+   {
+    "id": "view-03",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399486142!6m8!1m7!1sCAoSHENJQUJJaEQtbFpPOXF5T0FibzNwTmMwYkc4cVA.!2m2!1d32.80793270477984!2d-117.2175706881607!3f80!4f10!5f0.7820865974627469",
+    "label": "Display cases",
+    "labelEs": "Vitrinas"
+   },
+   {
+    "id": "view-04",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399428558!6m8!1m7!1sCAoSHENJQUJJaEE1Q0xnMWRfM2tkRVZvdzR6Rmd3dE0.!2m2!1d32.80793766215888!2d-117.2175593830562!3f180!4f10!5f0.7820865974627469",
+    "label": "Edibles",
+    "labelEs": "Comestibles"
+   },
+   {
+    "id": "view-05",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399509083!6m8!1m7!1sCAoSHENJQUJJaEEzdElpNEJ4eWRGRW80aEtCdjlrMGk.!2m2!1d32.80793618906305!2d-117.2175884533236!3f140!4f10!5f0.7820865974627469",
+    "label": "Entrance",
+    "labelEs": "Entrada"
+   },
+   {
+    "id": "view-06",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399497696!6m8!1m7!1sCAoSHENJQUJJaEI1RkstUG8xd3RHWFBHRlNtX2ZSTGo.!2m2!1d32.8079217472392!2d-117.2176310717638!3f40!4f0!5f0.7820865974627469",
+    "label": "Flower wall",
+    "labelEs": "Pared de flower"
+   },
+   {
+    "id": "view-07",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399417021!6m8!1m7!1sCAoSHENJQUJJaERISXI1czdlYVZycmhEeXNuYlZoYno.!2m2!1d32.8079217472392!2d-117.2176310717638!3f0!4f10!5f0.7820865974627469",
+    "label": "Product wall",
+    "labelEs": "Pared de productos"
+   },
+   {
+    "id": "view-08",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399474622!6m8!1m7!1sCAoSHENJQUJJaEJLY1dQM3dBMlQyOTlGaXV6RUlLV3k.!2m2!1d32.80793028053616!2d-117.2176123196512!3f160!4f20!5f0.7820865974627469",
+    "label": "Product wall 2",
+    "labelEs": "Pared de productos 2"
+   },
+   {
+    "id": "view-09",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399463231!6m8!1m7!1sCAoSHENJQUJJaEN4bDltTnJtT19tSXpnYk5WUlZQeTE.!2m2!1d32.80804481230748!2d-117.2175014219549!3f80!4f0!5f0.7820865974627469",
+    "label": "Side aisle",
+    "labelEs": "Pasillo lateral"
+   },
+   {
+    "id": "view-10",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399440064!6m8!1m7!1sCAoSHENJQUJJaEF3eXNPR0p4Y1FXWjYyZ1h2cHRWVUw.!2m2!1d32.80791313430194!2d-117.2176498238746!3f20!4f0!5f0.7820865974627469",
+    "label": "Waiting area",
+    "labelEs": "Sala de espera"
+   }
+  ],
+  "mission-valley-camino-del-rio-s": [
+   {
+    "id": "view-01",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399623908!6m8!1m7!1sCAoSHENJQUJJaERGNFFHeE5FMkFJX0VyendKTVJFNV8.!2m2!1d32.77769245712658!2d-117.1150102035691!3f300!4f20!5f0.7820865974627469",
+    "label": "Budtender counter",
+    "labelEs": "Mostrador"
+   },
+   {
+    "id": "view-02",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399715178!6m8!1m7!1sCAoSHENJQUJJaEFITW5IU3d3TGxRekxWRG9mR0psRzg.!2m2!1d32.77771167792339!2d-117.1150217836481!3f320!4f0!5f0.7820865974627469",
+    "label": "Center aisle",
+    "labelEs": "Pasillo central"
+   },
+   {
+    "id": "view-03",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399680860!6m8!1m7!1sCAoSHENJQUJJaERnOWpvemx4a2lkSGhXU3NiN1Z1WG4.!2m2!1d32.77769357887271!2d-117.1149845299033!3f80!4f10!5f0.7820865974627469",
+    "label": "Display cases",
+    "labelEs": "Vitrinas"
+   },
+   {
+    "id": "view-04",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399692249!6m8!1m7!1sCAoSHENJQUJJaEFNNHJKT0hweHlHbXRTOWNidDJPaEo.!2m2!1d32.77771558343771!2d-117.1149858764243!3f140!4f0!5f0.7820865974627469",
+    "label": "Edibles",
+    "labelEs": "Comestibles"
+   },
+   {
+    "id": "view-05",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399543643!6m8!1m7!1sCAoSHENJQUJJaERvNXEwU2NVdDVfT0NTNU1fbUpwbEU.!2m2!1d32.77767203079931!2d-117.1150102933372!3f180!4f0!5f0.7820865974627469",
+    "label": "Entrance",
+    "labelEs": "Entrada"
+   },
+   {
+    "id": "view-06",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399738116!6m8!1m7!1sCAoSHENJQUJJaEJLV3E4TnRqWk1raG9wb0tJc2RDMHI.!2m2!1d32.77774580231407!2d-117.115051496871!3f120!4f0!5f0.7820865974627469",
+    "label": "Flower wall",
+    "labelEs": "Pared de flower"
+   },
+   {
+    "id": "view-07",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399658116!6m8!1m7!1sCAoSHENJQUJJaEEwU0JnUGtGYWVWQVVoSi1qdnJPaS0.!2m2!1d32.77773132602785!2d-117.1150110114816!3f200!4f0!5f0.7820865974627469",
+    "label": "Product wall",
+    "labelEs": "Pared de productos"
+   },
+   {
+    "id": "view-08",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399532071!6m8!1m7!1sCAoSHENJQUJJaEJETHB1VUM2ck95cWhKbEdlNlJZWjQ.!2m2!1d32.77774877431455!2d-117.1150260925145!3f220!4f0!5f0.7820865974627469",
+    "label": "Vapes",
+    "labelEs": "Vapes"
+   },
+   {
+    "id": "view-09",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399703726!6m8!1m7!1sCAoSHENJQUJJaEJCR0Rod1otTl95Rk0wYms5NTRzNWo.!2m2!1d32.77769515794121!2d-117.1149589460024!3f280!4f10!5f0.7820865974627469",
+    "label": "Vapes 2",
+    "labelEs": "Vapes 2"
+   },
+   {
+    "id": "view-10",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399726721!6m8!1m7!1sCAoSHENJQUJJaENFWHcxWm5INmJwSXdQQkVvYVp5Q2I.!2m2!1d32.77771668425788!2d-117.1149602925236!3f260!4f10!5f0.7820865974627469",
+    "label": "Vapes 3",
+    "labelEs": "Vapes 3"
+   }
+  ],
+  "kearny-mesa-balboa-ave": [
+   {
+    "id": "view-01",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399784117!6m8!1m7!1sCAoSHENJQUJJaERYb2ZmbmVOU2tyblNhVmtYUXJYMmE.!2m2!1d32.82155685884795!2d-117.1500913551665!3f180!4f0!5f0.7820865974627469",
+    "label": "Outside entrance",
+    "labelEs": "Entrada exterior"
+   },
+   {
+    "id": "view-02",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399761113!6m8!1m7!1sCAoSHENJQUJJaEJnWDBYclFyTVQ3RmctOV9CMGhLT3E.!2m2!1d32.82156919236695!2d-117.1501299488462!3f0!4f0!5f0.7820865974627469",
+    "label": "Street view",
+    "labelEs": "Vista de la calle"
+   },
+   {
+    "id": "view-03",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399830120!6m8!1m7!1sCAoSHENJQUJJaENGNDk0VDBpMkVRRXpOaXRKNDVNTjk.!2m2!1d32.82146914414992!2d-117.1501364110431!3f260!4f20!5f0.7820865974627469",
+    "label": "Budtender counter",
+    "labelEs": "Mostrador"
+   },
+   {
+    "id": "view-04",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399853073!6m8!1m7!1sCAoSHENJQUJJaERBZTc3b3lsTGRVaGJITkdoUHE0T24.!2m2!1d32.82148444417313!2d-117.1500934194797!3f280!4f10!5f0.7820865974627469",
+    "label": "Center aisle",
+    "labelEs": "Pasillo central"
+   },
+   {
+    "id": "view-05",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399887474!6m8!1m7!1sCAoSHENJQUJJaEJtSWxYVF8wTXVOX1NNWTNEY0hnYU0.!2m2!1d32.82146845716575!2d-117.1501151396444!3f320!4f0!5f0.7820865974627469",
+    "label": "Checkout",
+    "labelEs": "Caja"
+   },
+   {
+    "id": "view-06",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399807155!6m8!1m7!1sCAoSHENJQUJJaEF1aTZCZVFaRUs2V2FwVU94aDBfQ0o.!2m2!1d32.82148704240492!2d-117.1501351545048!3f260!4f20!5f0.7820865974627469",
+    "label": "Edibles",
+    "labelEs": "Comestibles"
+   },
+   {
+    "id": "view-07",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399795657!6m8!1m7!1sCAoSHENJQUJJaEM2LWZGaXF3T2Y5UDF6T2pGazQ2dUo.!2m2!1d32.82155847187558!2d-117.1501304873627!3f320!4f10!5f0.7820865974627469",
+    "label": "Entrance",
+    "labelEs": "Entrada"
+   },
+   {
+    "id": "view-08",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399818549!6m8!1m7!1sCAoSHENJQUJJaEFkTzMwV1loTmpEeXptYjF0X21sbU0.!2m2!1d32.82154059459721!2d-117.1501316541482!3f320!4f10!5f0.7820865974627469",
+    "label": "Entrance 2",
+    "labelEs": "Entrada 2"
+   },
+   {
+    "id": "view-09",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399898939!6m8!1m7!1sCAoSHENJQUJJaERKUlU5MTZiSk1FQ0tJaUFmbU5vUGU.!2m2!1d32.82152271731607!2d-117.1501328209338!3f340!4f0!5f0.7820865974627469",
+    "label": "Entrance 3",
+    "labelEs": "Entrada 3"
+   },
+   {
+    "id": "view-10",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399876055!6m8!1m7!1sCAoSHENJQUJJaEFvc0hZelV5bnktbnNVZmptUHhFTWc.!2m2!1d32.8214677911423!2d-117.1500937784907!3f160!4f20!5f0.7820865974627469",
+    "label": "Flower wall",
+    "labelEs": "Pared de flower"
+   },
+   {
+    "id": "view-11",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399841669!6m8!1m7!1sCAoSHENJQUJJaEJCMGhjV25xZFF2LXBKNTRSVlVSU2w.!2m2!1d32.82152556105422!2d-117.1500923424467!3f160!4f10!5f0.7820865974627469",
+    "label": "Lobby",
+    "labelEs": "Recepción"
+   },
+   {
+    "id": "view-12",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399772652!6m8!1m7!1sCAoSHENJQUJJaENjSHdsZkpoRDRZUTJHNTUxNWxEX0k.!2m2!1d32.82151305032046!2d-117.1500927014577!3f160!4f0!5f0.7820865974627469",
+    "label": "Sales floor",
+    "labelEs": "Sala de ventas"
+   },
+   {
+    "id": "view-13",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399864428!6m8!1m7!1sCAoSHENJQUJJaEJ1c2pPRHY3bGJvOEtWT1RnZkJ5bks.!2m2!1d32.82150491969158!2d-117.1501339877193!3f280!4f10!5f0.7820865974627469",
+    "label": "Smoke shop",
+    "labelEs": "Smoke shop"
+   }
+  ],
+  "city-heights-home-ave": [
+   {
+    "id": "view-01",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399922285!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQ256TS1tZXc.!2m2!1d32.72692517438261!2d-117.1013499262708!3f280!4f0!5f0.7820865974627469",
+    "label": "Parking lot",
+    "labelEs": "Estacionamiento"
+   },
+   {
+    "id": "view-02",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399945269!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJQ256Sy1tdkFF!2m2!1d32.72683205536671!2d-117.1014179749445!3f80!4f20!5f0.7820865974627469",
+    "label": "Display cases",
+    "labelEs": "Vitrinas"
+   },
+   {
+    "id": "view-03",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399933698!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJQ256S19JMVFF!2m2!1d32.72687937029353!2d-117.1013654571706!3f220!4f20!5f0.7820865974627469",
+    "label": "Entrance",
+    "labelEs": "Entrada"
+   },
+   {
+    "id": "view-04",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399956804!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQ256TV9UUWc.!2m2!1d32.72689524826843!2d-117.101347951243!3f80!4f10!5f0.7820865974627469",
+    "label": "Entrance 2",
+    "labelEs": "Entrada 2"
+   },
+   {
+    "id": "view-05",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399979896!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQ256Sy0wZGc.!2m2!1d32.72686371067959!2d-117.1013830528707!3f100!4f20!5f0.7820865974627469",
+    "label": "Entrance 3",
+    "labelEs": "Entrada 3"
+   },
+   {
+    "id": "view-06",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399910704!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQ256TV81ZlE.!2m2!1d32.72691102559313!2d-117.1013305350879!3f40!4f0!5f0.7820865974627469",
+    "label": "Lobby",
+    "labelEs": "Recepción"
+   },
+   {
+    "id": "view-07",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786399968267!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJQ256S19hdGdF!2m2!1d32.72684785359547!2d-117.1014004690213!3f80!4f10!5f0.7820865974627469",
+    "label": "Lobby 2",
+    "labelEs": "Recepción 2"
+   }
+  ],
+  "encinitas-n-el-camino-real": [
+   {
+    "id": "view-01",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400106551!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJRHo0WW4yb1FF!2m2!1d33.05041531344109!2d-117.260007837455!3f80!4f0!5f0.7820865974627469",
+    "label": "Storefront",
+    "labelEs": "Fachada"
+   },
+   {
+    "id": "view-02",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400049103!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRHo0Zkd2R0E.!2m2!1d33.05042128272401!2d-117.259983168801!3f200!4f0!5f0.7820865974627469",
+    "label": "Outside entrance",
+    "labelEs": "Entrada exterior"
+   },
+   {
+    "id": "view-03",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400072111!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRHo0YkhVQ2c.!2m2!1d33.05045300878452!2d-117.2599122127646!3f180!4f0!5f0.7820865974627469",
+    "label": "Budtender counter",
+    "labelEs": "Mostrador"
+   },
+   {
+    "id": "view-04",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400083528!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJRHo0ZEd1LVFF!2m2!1d33.0504185206309!2d-117.2598724737851!3f340!4f20!5f0.7820865974627469",
+    "label": "Budtender counter 2",
+    "labelEs": "Mostrador 2"
+   },
+   {
+    "id": "view-05",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400117969!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJRHo0YkdMcndF!2m2!1d33.05043290272559!2d-117.2599324859204!3f60!4f0!5f0.7820865974627469",
+    "label": "Budtender counter 3",
+    "labelEs": "Mostrador 3"
+   },
+   {
+    "id": "view-06",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400014672!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJRHo0Zkc4N3dF!2m2!1d33.05044787198204!2d-117.2599650485513!3f0!4f0!5f0.7820865974627469",
+    "label": "Checkout",
+    "labelEs": "Caja"
+   },
+   {
+    "id": "view-07",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400060732!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJRHo0ZEdRaXdF!2m2!1d33.050439209905!2d-117.2598797398293!3f260!4f0!5f0.7820865974627469",
+    "label": "Flower wall",
+    "labelEs": "Pared de flower"
+   },
+   {
+    "id": "view-08",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400003017!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJRHo0Zkgxc0FF!2m2!1d33.05040609709911!2d-117.259951862032!3f160!4f0!5f0.7820865974627469",
+    "label": "Lobby",
+    "labelEs": "Recepción"
+   },
+   {
+    "id": "view-09",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400026123!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRHo0ZkgxVEE.!2m2!1d33.0504269765193!2d-117.2599583207354!3f180!4f0!5f0.7820865974627469",
+    "label": "Lobby 2",
+    "labelEs": "Recepción 2"
+   },
+   {
+    "id": "view-10",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400037590!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJRHo0ZEd0MGdF!2m2!1d33.05041171984378!2d-117.2598969630443!3f20!4f0!5f0.7820865974627469",
+    "label": "Sales floor",
+    "labelEs": "Sala de ventas"
+   },
+   {
+    "id": "view-11",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400094939!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJRHo0ZEc3MGdF!2m2!1d33.05043234572859!2d-117.2599044982003!3f120!4f20!5f0.7820865974627469",
+    "label": "Sales floor 2",
+    "labelEs": "Sala de ventas 2"
+   }
+  ],
+  "la-mesa-university-ave": [
+   {
+    "id": "view-01",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400279621!6m8!1m7!1sCAoSHENJQUJJaEFBM2lsV0xqSnBiV2dKQjF3QUIwTXI.!2m2!1d32.7553082705888!2d-117.0434470558853!3f40!4f0!5f0.7820865974627469",
+    "label": "Storefront",
+    "labelEs": "Fachada"
+   },
+   {
+    "id": "view-02",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400268054!6m8!1m7!1sCAoSHENJQUJJaEFEeWRWZ3hqajdNMmdKQjV3QUFYVEM.!2m2!1d32.75533288814733!2d-117.0434653748774!3f80!4f10!5f0.7820865974627469",
+    "label": "Outside entrance",
+    "labelEs": "Entrada exterior"
+   },
+   {
+    "id": "view-03",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400348582!6m8!1m7!1sCAoSHENJQUJJaEFEeWNLenF3TTJMR2dKQjFzQUNyVDM.!2m2!1d32.75531155581221!2d-117.0434689668364!3f40!4f20!5f0.7820865974627469",
+    "label": "Outside entrance 2",
+    "labelEs": "Entrada exterior 2"
+   },
+   {
+    "id": "view-04",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400164417!6m8!1m7!1sCAoSHENJQUJJaEFBM2lsV0xqSnBiV2dKQjV3QUIyNjQ.!2m2!1d32.75533591819499!2d-117.0434907879863!3f280!4f0!5f0.7820865974627469",
+    "label": "Parking lot",
+    "labelEs": "Estacionamiento"
+   },
+   {
+    "id": "view-05",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400187334!6m8!1m7!1sCAoSHENJQUJJaEFEeWNLenF3TTJMR2dKQjUwQUIzRi0.!2m2!1d32.75535511500851!2d-117.0434620523152!3f260!4f0!5f0.7820865974627469",
+    "label": "Street view",
+    "labelEs": "Vista de la calle"
+   },
+   {
+    "id": "view-06",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400198934!6m8!1m7!1sCAoSHENJQUJJaEFEeWRWZ3hqajdNMmdKQjUwQUFvbzc.!2m2!1d32.75535738550786!2d-117.0434876450225!3f120!4f0!5f0.7820865974627469",
+    "label": "Street view 2",
+    "labelEs": "Vista de la calle 2"
+   },
+   {
+    "id": "view-07",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400140972!6m8!1m7!1sCAoSHENJQUJJaEFHYndOUUFEbFdwMmdMbURFQUI2MzU.!2m2!1d32.75536281707576!2d-117.0433835679934!3f320!4f10!5f0.7820865974627469",
+    "label": "Checkout",
+    "labelEs": "Caja"
+   },
+   {
+    "id": "view-08",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400221867!6m8!1m7!1sCAoSHENJQUJJaEFHYndOUUFEbFdwMmdMbHpnQUFxbFY.!2m2!1d32.75538339374961!2d-117.0433914703063!3f260!4f0!5f0.7820865974627469",
+    "label": "Checkout 2",
+    "labelEs": "Caja 2"
+   },
+   {
+    "id": "view-09",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400291210!6m8!1m7!1sCAoSHENJQUJJaEFEeWRWZ3hqajdNMmdKQjEwQUFlMGM.!2m2!1d32.75532759827987!2d-117.0433957806587!3f280!4f0!5f0.7820865974627469",
+    "label": "Edibles",
+    "labelEs": "Comestibles"
+   },
+   {
+    "id": "view-10",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400337105!6m8!1m7!1sCAoSHENJQUJJaEFEeWNLenF3TTJMR2dKQjF3QUFjMjE.!2m2!1d32.75527983702048!2d-117.0433709961314!3f240!4f0!5f0.7820865974627469",
+    "label": "Entrance",
+    "labelEs": "Entrada"
+   },
+   {
+    "id": "view-11",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400210442!6m8!1m7!1sCAoSHENJQUJJaEFEeWRWZ3hqajdNMmdKQjEwQUNwY20.!2m2!1d32.75528170876377!2d-117.0433965888498!3f180!4f0!5f0.7820865974627469",
+    "label": "Lobby",
+    "labelEs": "Recepción"
+   },
+   {
+    "id": "view-12",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400152459!6m8!1m7!1sCAoSHENJQUJJaEFHYnlmUWdCeU42bWdMbDZBQUFhMWs.!2m2!1d32.755378530306096!2d-117.04349653512003!3f0!4f0!5f0.7820865974627469",
+    "label": "Product wall",
+    "labelEs": "Pared de productos"
+   },
+   {
+    "id": "view-13",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400325512!6m8!1m7!1sCAoSHENJQUJJaEFHYndOUUFEbFdwMmdMbDdnQUJZUXc.!2m2!1d32.75537189970308!2d-117.04352096043668!3f120!4f0!5f0.7820865974627469",
+    "label": "Product wall 2",
+    "labelEs": "Pared de productos 2"
+   },
+   {
+    "id": "view-14",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400175794!6m8!1m7!1sCAoSHENJQUJJaEFHYnphcVFTZG1PbWdMbDhrQURYMTg.!2m2!1d32.755322408478776!2d-117.04350156386194!3f340!4f20!5f0.7820865974627469",
+    "label": "Sales floor",
+    "labelEs": "Sala de ventas"
+   },
+   {
+    "id": "view-15",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400314122!6m8!1m7!1sCAoSHENJQUJJaEFHYndOUUFEbFdwMmdMbDk0QUNXX2M.!2m2!1d32.75532939615056!2d-117.04347731814097!3f0!4f0!5f0.7820865974627469",
+    "label": "Sales floor 2",
+    "labelEs": "Sala de ventas 2"
+   },
+   {
+    "id": "view-16",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400302606!6m8!1m7!1sCAoSHENJQUJJaEFHYnlmUWdCeU42bWdMbDRvQUR6ZUE.!2m2!1d32.75538508114579!2d-117.04347210980055!3f80!4f10!5f0.7820865974627469",
+    "label": "Vapes",
+    "labelEs": "Vapes"
+   },
+   {
+    "id": "view-17",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400360070!6m8!1m7!1sCAoSHENJQUJJaEFHYndOUUFEbFdwMmdMbDNjQUFZbXA.!2m2!1d32.75539173259795!2d-117.0434475946792!3f40!4f0!5f0.7820865974627469",
+    "label": "Vapes 2",
+    "labelEs": "Vapes 2"
+   }
+  ],
+  "la-mesa-lake-murray-blvd": [
+   {
+    "id": "view-01",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400371666!6m8!1m7!1sCAoSHENJQUJJaEJHMlFJWmFHNHRGdjk3djhqZmNPcmk.!2m2!1d32.77496990817766!2d-117.0448958676857!3f0!4f10!5f0.7820865974627469",
+    "label": "Storefront",
+    "labelEs": "Fachada"
+   },
+   {
+    "id": "view-02",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400578462!6m8!1m7!1sCAoSHENJQUJJaEFyQnB3SEVDWXc4RkJqRjNEcTZBbk8.!2m2!1d32.77497321203197!2d-117.0448078652719!3f120!4f0!5f0.7820865974627469",
+    "label": "Outside entrance",
+    "labelEs": "Entrada exterior"
+   },
+   {
+    "id": "view-03",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400589917!6m8!1m7!1sCAoSHENJQUJJaENSeHZROTM2SF9EQWNKY29veW02Q3k.!2m2!1d32.77493244739595!2d-117.0448498011207!3f39.88743!4f0.11257000000000517!5f0.7820865974627469",
+    "label": "Parking lot",
+    "labelEs": "Estacionamiento"
+   },
+   {
+    "id": "view-04",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400497894!6m8!1m7!1sCAoSHENJQUJJaEMwT0NzbjdqWTVFbHJjWFh6LV9HYzc.!2m2!1d32.77512872990867!2d-117.0449831516758!3f180!4f0!5f0.7820865974627469",
+    "label": "Budtender counter",
+    "labelEs": "Mostrador"
+   },
+   {
+    "id": "view-05",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400532322!6m8!1m7!1sCAoSHENJQUJJaERQelo2c204N2J3dF83REsxb1haWWs.!2m2!1d32.77513031677498!2d-117.0448915573642!3f80!4f10!5f0.7820865974627469",
+    "label": "Budtender counter 2",
+    "labelEs": "Mostrador 2"
+   },
+   {
+    "id": "view-06",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400486519!6m8!1m7!1sCAoSHENJQUJJaEFsV2xsc3dPXzcwWEgtYzlBS3c4Zjk.!2m2!1d32.77505139183823!2d-117.0448029263599!3f120!4f10!5f0.7820865974627469",
+    "label": "Center aisle",
+    "labelEs": "Pasillo central"
+   },
+   {
+    "id": "view-07",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400474946!6m8!1m7!1sCAoSHENJQUJJaERvS29vdjFOMVduWWUxcFl4dV9jSlU.!2m2!1d32.77505489816694!2d-117.0448897613969!3f20!4f0!5f0.7820865974627469",
+    "label": "Checkout",
+    "labelEs": "Caja"
+   },
+   {
+    "id": "view-08",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400520778!6m8!1m7!1sCAoSHENJQUJJaEFwREVkVkttZldIaTl1RThWY3JIbTM.!2m2!1d32.77509181406547!2d-117.0449364565416!3f120!4f0!5f0.7820865974627469",
+    "label": "Checkout 2",
+    "labelEs": "Caja 2"
+   },
+   {
+    "id": "view-09",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400463479!6m8!1m7!1sCAoSHENJQUJJaEJpMmN0b0hIU1hGenZOeWstUlZuZlo.!2m2!1d32.77509030666229!2d-117.04475865574278!3f120!4f0!5f0.7820865974627469",
+    "label": "Flower wall",
+    "labelEs": "Pared de flower"
+   },
+   {
+    "id": "view-10",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400555387!6m8!1m7!1sCAoSHENJQUJJaEE0My1OdHY4SXZiVUluT295eXB3WkQ.!2m2!1d32.77512952322182!2d-117.0448026569646!3f60!4f0!5f0.7820865974627469",
+    "label": "Flower wall 2",
+    "labelEs": "Pared de flower 2"
+   },
+   {
+    "id": "view-11",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400566936!6m8!1m7!1sCAoSHENJQUJJaEQ4RjMtcE54aWsxU21jamJVM3pyRzU.!2m2!1d32.77516873972687!2d-117.0448466581773!3f200!4f20!5f0.7820865974627469",
+    "label": "Product wall",
+    "labelEs": "Pared de productos"
+   },
+   {
+    "id": "view-12",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400509321!6m8!1m7!1sCAoSHENJQUJJaEJldFJMTS1BQ2xZV0Z4bExoOEdIYUo.!2m2!1d32.77500948264916!2d-117.0448552788219!3f80!4f10!5f0.7820865974627469",
+    "label": "Sales floor",
+    "labelEs": "Sala de ventas"
+   },
+   {
+    "id": "view-13",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400543903!6m8!1m7!1sCAoSHENJQUJJaEJTZ2ZGaTJKcXJSemF6QlFXTHZXRlI.!2m2!1d32.77516572543977!2d-117.0450298467996!3f140!4f0!5f0.7820865974627469",
+    "label": "Smoke shop",
+    "labelEs": "Smoke shop"
+   }
+  ],
+  "lemon-grove-federal-blvd": [],
+  "vista-s-santa-fe-ave": [
+   {
+    "id": "view-01",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400763672!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJRHo0WmlxeWdF!2m2!1d33.19392760733921!2d-117.232070490385!3f20!4f0!5f0.7820865974627469",
+    "label": "Outside entrance",
+    "labelEs": "Entrada exterior"
+   },
+   {
+    "id": "view-02",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400775195!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJRHo0Y2l4dEFF!2m2!1d33.1939603613955!2d-117.2320241068865!3f0!4f0!5f0.7820865974627469",
+    "label": "Budtender counter",
+    "labelEs": "Mostrador"
+   },
+   {
+    "id": "view-03",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400821344!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJRHo0ZWoycGdF!2m2!1d33.19400528374037!2d-117.2320512910272!3f180!4f10!5f0.7820865974627469",
+    "label": "Budtender counter 2",
+    "labelEs": "Mostrador 2"
+   },
+   {
+    "id": "view-04",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400752064!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRHo0ZWpOWmc.!2m2!1d33.19398443400851!2d-117.2320582889242!3f20!4f0!5f0.7820865974627469",
+    "label": "Display cases",
+    "labelEs": "Vitrinas"
+   },
+   {
+    "id": "view-05",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400798328!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRHo0YWkwZEE.!2m2!1d33.1939762282546!2d-117.2320066121406!3f340!4f10!5f0.7820865974627469",
+    "label": "Display cases 2",
+    "labelEs": "Vitrinas 2"
+   },
+   {
+    "id": "view-06",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400786794!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRHo0WmpXQnc.!2m2!1d33.19394800214723!2d-117.2320620570225!3f20!4f0!5f0.7820865974627469",
+    "label": "Entrance",
+    "labelEs": "Entrada"
+   },
+   {
+    "id": "view-07",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400844452!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRHo0Y2lOTEE.!2m2!1d33.19397908551721!2d-117.2320321813841!3f80!4f0!5f0.7820865974627469",
+    "label": "Product wall",
+    "labelEs": "Pared de productos"
+   },
+   {
+    "id": "view-08",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400855892!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJRHo0ZWpZbVFF!2m2!1d33.19400009925848!2d-117.2320261703693!3f180!4f0!5f0.7820865974627469",
+    "label": "Product wall 2",
+    "labelEs": "Pared de productos 2"
+   },
+   {
+    "id": "view-09",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400809881!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRHo0Wmp3U3c.!2m2!1d33.19396851332256!2d-117.2320538030928!3f40!4f10!5f0.7820865974627469",
+    "label": "Sales floor",
+    "labelEs": "Sala de ventas"
+   },
+   {
+    "id": "view-10",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400833020!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJRHo0YWpPOWdF!2m2!1d33.19399497295335!2d-117.2320011394249!3f200!4f10!5f0.7820865974627469",
+    "label": "Vapes",
+    "labelEs": "Vapes"
+   }
+  ],
+  "chula-vista-broadway": [
+   {
+    "id": "view-01",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400867630!6m8!1m7!1sCAoSHENJQUJJaEN2Y3QwTldsaFJSLVdubWltYkZWRmw.!2m2!1d32.60571946332222!2d-117.0809640330215!3f0!4f10!5f0.7820865974627469",
+    "label": "Parking lot",
+    "labelEs": "Estacionamiento"
+   },
+   {
+    "id": "view-02",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400913844!6m8!1m7!1sCAoSHENJQUJJaEJ2bl9oUzBoWk12YmRFRlNtSjAzalk.!2m2!1d32.60572336983507!2d-117.08103837318285!3f280!4f20!5f0.7820865974627469",
+    "label": "Budtender counter",
+    "labelEs": "Mostrador"
+   },
+   {
+    "id": "view-03",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400982586!6m8!1m7!1sCAoSHENJQUJJaEJyVVNFX19EcUxVS2NlVURwLS1fUmg.!2m2!1d32.60573961688427!2d-117.0810918837173!3f80!4f0!5f0.7820865974627469",
+    "label": "Budtender counter 2",
+    "labelEs": "Mostrador 2"
+   },
+   {
+    "id": "view-04",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400959537!6m8!1m7!1sCAoSHENJQUJJaEJaejBlSWFXZmZGQ052UHAtVml0NzQ.!2m2!1d32.60570203925018!2d-117.0810353205681!3f280!4f0!5f0.7820865974627469",
+    "label": "Checkout",
+    "labelEs": "Caja"
+   },
+   {
+    "id": "view-05",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400902278!6m8!1m7!1sCAoSHENJQUJJaERfcFpXTzZMTzFOSHpSQjRMVV9ncGU.!2m2!1d32.60572748953646!2d-117.0810130544352!3f100!4f0!5f0.7820865974627469",
+    "label": "Entrance",
+    "labelEs": "Entrada"
+   },
+   {
+    "id": "view-06",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400890652!6m8!1m7!1sCAoSHENJQUJJaEFXRzNuWjFzU2ZLRm5yTHdZWUlxbVI.!2m2!1d32.60571871474549!2d-117.0809896211236!3f320!4f20!5f0.7820865974627469",
+    "label": "Lobby",
+    "labelEs": "Recepción"
+   },
+   {
+    "id": "view-07",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400948127!6m8!1m7!1sCAoSHENJQUJJaENncEtualdMbXlCbUk3bVRqVmt4UUM.!2m2!1d32.60574301793432!2d-117.0810665649762!3f80!4f20!5f0.7820865974627469",
+    "label": "Product wall",
+    "labelEs": "Pared de productos"
+   },
+   {
+    "id": "view-08",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400925244!6m8!1m7!1sCAoSHENJQUJJaENKaEVYcnlwMHlwYmJPbVdSSnhDaUI.!2m2!1d32.60571608881156!2d-117.0810869456652!3f0!4f20!5f0.7820865974627469",
+    "label": "Sales floor",
+    "labelEs": "Sala de ventas"
+   },
+   {
+    "id": "view-09",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400936661!6m8!1m7!1sCAoSHENJQUJJaERWUk85Mlg0aUNuekZmQllBeWRQTlI.!2m2!1d32.60569901663286!2d-117.0810607290957!3f340!4f10!5f0.7820865974627469",
+    "label": "Sales floor 2",
+    "labelEs": "Sala de ventas 2"
+   },
+   {
+    "id": "view-10",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400971030!6m8!1m7!1sCAoSHENJQUJJaEFFdl9YNHRnY0tjZFBQODJ6SWlNX1Q.!2m2!1d32.60571978842626!2d-117.0810617167063!3f359.88742!4f30!5f0.7820865974627469",
+    "label": "Smoke shop",
+    "labelEs": "Smoke shop"
+   },
+   {
+    "id": "view-11",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400879212!6m8!1m7!1sCAoSHENJQUJJaEJnY3l6V1NuakVKa29aQlk3U2NvSjk.!2m2!1d32.60574633912696!2d-117.081041246232!3f280!4f0!5f0.7820865974627469",
+    "label": "Vapes",
+    "labelEs": "Vapes"
+   },
+   {
+    "id": "view-12",
+    "embedSrc": "https://www.google.com/maps/embed?pb=!4v1786400994068!6m8!1m7!1sCAoSHENJQUJJaENpNjktbExGcUVfRzhNNk5Hdnl1SVk.!2m2!1d32.60569582064639!2d-117.0810834441373!3f20!4f0!5f0.7820865974627469",
+    "label": "Waiting area",
+    "labelEs": "Sala de espera"
+   }
+  ]
+ },
+ "videoTours": {
+  "encinitas-n-el-camino-real": {
+   "name": "Wellgreens Encinitas Dispensary Tour",
+   "videoUrl": "https://wellgreens-video-tours.netlify.app/encinitas-store-tour.mp4",
+   "posterUrl": "https://wellgreens-video-tours.netlify.app/encinitas-store-tour.jpg"
+  },
+  "kearny-mesa-balboa-ave": {
+   "name": "Wellgreens Kearny Mesa Dispensary Tour",
+   "videoUrl": "https://wellgreens-video-tours.netlify.app/kearny-mesa-store-tour.mp4",
+   "posterUrl": "https://wellgreens-video-tours.netlify.app/kearny-mesa-store-tour.jpg"
+  },
+  "pacific-beach-de-soto-st": {
+   "name": "Wellgreens Pacific Beach Dispensary Tour",
+   "videoUrl": "https://wellgreens-video-tours.netlify.app/pacific-beach-store-tour.mp4",
+   "posterUrl": "https://wellgreens-video-tours.netlify.app/pacific-beach-store-tour.jpg"
+  },
+  "lemon-grove-federal-blvd": {
+   "name": "Wellgreens Lemon Grove Dispensary Tour",
+   "videoUrl": "https://wellgreens-video-tours.netlify.app/lemon-grove-store-tour.mp4",
+   "posterUrl": "https://wellgreens-video-tours.netlify.app/lemon-grove-store-tour.jpg"
+  },
+  "vista-s-santa-fe-ave": {
+   "name": "Wellgreens Vista Dispensary Tour",
+   "videoUrl": "https://wellgreens-video-tours.netlify.app/vista-store-tour.mp4",
+   "posterUrl": "https://wellgreens-video-tours.netlify.app/vista-store-tour.jpg"
+  }
+ }
+}

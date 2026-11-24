@@ -1,0 +1,20 @@
+/* site.css: the few rules the interaction layer (site.js, src/fragments.mjs) needs on top of the
+   site's own stylesheets. */
+
+/* Bots and /brand-partners skip the gates. The site CSS keys that on body.gate-bypass, which only
+   site.js can set (the early head script runs before <body> exists); cover the moment before it. */
+html.gate-bypass .age-gate-overlay,
+html.gate-bypass .location-selector-overlay { display: none !important; }
+html.gate-bypass, html.gate-bypass body { overflow: visible; height: auto; }
+
+/* Map screenshots (src/fragments.mjs) replace the Leaflet maps. The service-area map's gradient
+   edge (::after) is already part of the screenshot; do not paint it twice. */
+[data-wg-map].service-area-hero-leaflet.leaflet-container::after { content: none; }
+[data-wg-map] img { user-select: none; -webkit-user-drag: none; }
+[data-wg-map] .leaflet-control-attribution a { text-decoration: none; }
+[data-wg-map] .leaflet-control-attribution a:hover { text-decoration: underline; }
+
+/* Map credit links on the static map images ("© OpenStreetMap", "© CARTO"): keep the small type,
+   give each link a 44px-tall hit area. Vertical padding on an inline box grows its hit box without
+   moving the line it sits on. */
+.leaflet-control-attribution a { padding: 17px 3px; }

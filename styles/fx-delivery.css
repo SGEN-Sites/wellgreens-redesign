@@ -1,0 +1,191 @@
+/* fx-delivery.css: compact delivery variants for owner review (?delivery=<variant>); scoped html[data-fx="on"][data-delivery="<variant>"]. */
+/* Home "San Diego, we deliver" section (EN + /es/). fx-delivery.js tags the existing nodes:
+     #wg-dl-section > … .wg-dl-areas > .wg-dl-head ("Service areas" + count)
+                                    > .wg-dl-hub.wg-dl-hub-<n> > .wg-dl-hubhead (hub name + count)
+                                                                > .wg-dl-grid > .wg-dl-item > a.wg-dl-card
+     a.wg-dl-card > .wg-dl-body > .wg-dl-namerow (.wg-dl-dot + .wg-dl-name) + .wg-dl-zips ; .wg-dl-go
+   The intro, coupons and every word, link and accessible name stay exactly as they are.
+   The #wg-dl-section id exists only while a variant is on; it also outranks the premium layer's
+   `.grid:has(> * > a.rounded-xl.px-4.py-3)` tile rules in enhance.css. */
+
+/* ------------------------------------------------------------------------------------------
+   Shared by the three variants
+   ------------------------------------------------------------------------------------------ */
+html[data-fx="on"]:is([data-delivery="directory"], [data-delivery="tiles"], [data-delivery="boards"]) #wg-dl-section .wg-dl-areas { margin-top: 1.5rem; }
+html[data-fx="on"]:is([data-delivery="directory"], [data-delivery="tiles"], [data-delivery="boards"]) #wg-dl-section .wg-dl-head > div { margin-bottom: 0; align-items: baseline; }
+html[data-fx="on"]:is([data-delivery="directory"], [data-delivery="tiles"], [data-delivery="boards"]) #wg-dl-section .wg-dl-head h3 { font-size: 13px; line-height: 1.3; letter-spacing: .24em; font-weight: 700; color: var(--fx-ink); }
+html[data-fx="on"]:is([data-delivery="directory"], [data-delivery="tiles"], [data-delivery="boards"]) #wg-dl-section :is(.wg-dl-head, .wg-dl-hubhead) span { white-space: nowrap; }
+html[data-fx="on"]:is([data-delivery="directory"], [data-delivery="tiles"], [data-delivery="boards"]) #wg-dl-section .wg-dl-hubhead > div { flex-wrap: wrap; row-gap: .25rem; }
+html[data-fx="on"]:is([data-delivery="directory"], [data-delivery="tiles"], [data-delivery="boards"]) #wg-dl-section .wg-dl-item { min-width: 0; }
+html[data-fx="on"]:is([data-delivery="directory"], [data-delivery="tiles"], [data-delivery="boards"]) #wg-dl-section .wg-dl-card { -webkit-tap-highlight-color: transparent; }
+html[data-fx="on"]:is([data-delivery="directory"], [data-delivery="tiles"], [data-delivery="boards"]) #wg-dl-section .wg-dl-name { transition: color .2s ease; }
+html[data-fx="on"]:is([data-delivery="directory"], [data-delivery="tiles"], [data-delivery="boards"]) #wg-dl-section .wg-dl-zips { color: var(--c-8); font-variant-numeric: tabular-nums; }
+/* a list of five or more ZIPs wraps inside a cell; this width (three ZIPs and a "·", short of four ZIPs)
+   makes it break after a "·" (3 + 3), never start a line with one */
+html[data-fx="on"]:is([data-delivery="directory"], [data-delivery="tiles"], [data-delivery="boards"]) #wg-dl-section .wg-dl-zips-long { max-width: calc(11.6em + .9rem); }
+html[data-fx="on"]:is([data-delivery="directory"], [data-delivery="tiles"], [data-delivery="boards"]) #wg-dl-section .wg-dl-go { white-space: nowrap; }
+html[data-fx="on"]:is([data-delivery="directory"], [data-delivery="tiles"], [data-delivery="boards"]) #wg-dl-section .wg-dl-go svg { flex: none; transition: transform .3s var(--fx-ease); }
+html[data-fx="on"]:is([data-delivery="directory"], [data-delivery="tiles"], [data-delivery="boards"]) #wg-dl-section .wg-dl-card:is(:hover, :focus-visible) .wg-dl-go svg { transform: translateX(3px); }
+html[data-fx="on"]:is([data-delivery="directory"], [data-delivery="tiles"], [data-delivery="boards"]) #wg-dl-section .wg-dl-dot { transition: background-color .2s ease, box-shadow .2s ease; }
+html[data-fx="on"]:is([data-delivery="directory"], [data-delivery="tiles"], [data-delivery="boards"]) #wg-dl-section .wg-dl-card:is(:hover, :focus-visible) .wg-dl-dot { background-color: var(--fx-bright); box-shadow: 0 0 0 3px color-mix(in srgb, var(--fx-bright) 24%, transparent); }
+
+/* one light stagger when the area block scrolls in (fx-delivery.js adds .wg-dl-pre, then .wg-dl-in) */
+@media (prefers-reduced-motion: no-preference) {
+  html[data-fx="on"]:is([data-delivery="directory"], [data-delivery="tiles"], [data-delivery="boards"]) #wg-dl-section.wg-dl-pre :is(.wg-dl-head > div, .wg-dl-hubhead > div, .wg-dl-card) { opacity: 0; translate: 0 14px; }
+  html[data-fx="on"]:is([data-delivery="directory"], [data-delivery="tiles"], [data-delivery="boards"]) #wg-dl-section.wg-dl-pre.wg-dl-in :is(.wg-dl-head > div, .wg-dl-hubhead > div, .wg-dl-card) {
+    opacity: 1; translate: none;
+    transition: opacity .6s var(--fx-ease) calc(var(--wg-dl-i, 0) * 30ms), translate .8s var(--fx-ease) calc(var(--wg-dl-i, 0) * 30ms);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-fx="on"]:is([data-delivery="directory"], [data-delivery="tiles"], [data-delivery="boards"]) #wg-dl-section :is(.wg-dl-card, .wg-dl-name, .wg-dl-dot, .wg-dl-go svg) { transition: none; }
+  html[data-fx="on"]:is([data-delivery="directory"], [data-delivery="tiles"], [data-delivery="boards"]) #wg-dl-section .wg-dl-card:is(:hover, :focus-visible),
+  html[data-fx="on"]:is([data-delivery="directory"], [data-delivery="tiles"], [data-delivery="boards"]) #wg-dl-section .wg-dl-card:is(:hover, :focus-visible) .wg-dl-go svg { transform: none; }
+}
+
+/* ------------------------------------------------------------------------------------------
+   A · directory — one line per area (name · ZIPs …… Order delivery →), hairline rows, three
+   columns read top to bottom; no boxes. A ZIP list never breaks: where a row is too full the
+   "Order delivery →" moves to the row's second line, right-aligned (same 44px row). Two-line
+   entries below 1280px, three-line cells two-up on phones.
+   ------------------------------------------------------------------------------------------ */
+html[data-fx="on"][data-delivery="directory"] #wg-dl-section .wg-dl-areas { gap: 1.35rem; }
+html[data-fx="on"][data-delivery="directory"] #wg-dl-section .wg-dl-hubhead > div { margin-bottom: 0; padding-bottom: .5rem; border-bottom: 1px solid color-mix(in srgb, var(--fx-green) 55%, transparent); }
+html[data-fx="on"][data-delivery="directory"] #wg-dl-section .wg-dl-hubhead h3 { font-size: 11.5px; line-height: 1.35; letter-spacing: .2em; font-weight: 700; color: var(--fx-green); }
+html[data-fx="on"][data-delivery="directory"] #wg-dl-section .wg-dl-grid {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(var(--wg-dl-r3), auto);
+  grid-auto-flow: column; column-gap: 2rem; row-gap: 0;
+}
+html[data-fx="on"][data-delivery="directory"] #wg-dl-section .wg-dl-item { display: flex; border-bottom: 1px solid var(--fx-line); }
+html[data-fx="on"][data-delivery="directory"] #wg-dl-section .wg-dl-card {
+  flex: 1 1 auto; flex-direction: row; flex-wrap: wrap; align-content: center; align-items: center; justify-content: flex-start; column-gap: .55rem; row-gap: .1rem;
+  min-height: 2.75rem; padding: .4rem .55rem; border: 0; border-radius: .5rem; background: transparent; box-shadow: none; transform: none;
+  transition: background-color .2s ease;
+}
+html[data-fx="on"][data-delivery="directory"] #wg-dl-section .wg-dl-body { display: contents; }
+html[data-fx="on"][data-delivery="directory"] #wg-dl-section .wg-dl-namerow { order: 1; flex: none; gap: .5rem; }
+html[data-fx="on"][data-delivery="directory"] #wg-dl-section .wg-dl-name { font-size: 13.5px; line-height: 1.3; font-weight: 700; }
+html[data-fx="on"][data-delivery="directory"] #wg-dl-section .wg-dl-zips { order: 2; flex: none; max-width: none; margin: 0; padding: 0; white-space: nowrap; font-size: 10.5px; line-height: 1.25; font-weight: 500; letter-spacing: .01em; }
+html[data-fx="on"][data-delivery="directory"] #wg-dl-section .wg-dl-go { order: 4; flex: none; margin: 0 0 0 auto; padding-left: .35rem; font-size: 9.5px; line-height: 1.3; letter-spacing: .11em; }
+html[data-fx="on"][data-delivery="directory"] #wg-dl-section .wg-dl-card:is(:hover, :focus-visible) { background: color-mix(in srgb, var(--fx-green) 7%, transparent); transform: none; box-shadow: none; }
+html[data-fx="on"][data-delivery="directory"] #wg-dl-section .wg-dl-card:is(:hover, :focus-visible) .wg-dl-name { color: var(--fx-green); }
+html[data-fx="on"][data-delivery="directory"] #wg-dl-section .wg-dl-card:focus-visible { outline: 2px solid var(--fx-green); outline-offset: -2px; border-radius: .5rem; }
+@media (max-width: 1279px) {
+  /* two-line entries: name · Order delivery → / ZIPs ("Downtown / Gaslamp" + "Ordena a domicilio →" fit one line at 1024) */
+  html[data-fx="on"][data-delivery="directory"] #wg-dl-section .wg-dl-grid { column-gap: 1.25rem; }
+  html[data-fx="on"][data-delivery="directory"] #wg-dl-section .wg-dl-card { column-gap: .5rem; row-gap: .12rem; padding: .5rem .45rem .55rem; }
+  html[data-fx="on"][data-delivery="directory"] #wg-dl-section .wg-dl-name { font-size: 13px; }
+  html[data-fx="on"][data-delivery="directory"] #wg-dl-section .wg-dl-go { padding-left: 0; }
+  html[data-fx="on"][data-delivery="directory"] #wg-dl-section .wg-dl-zips { order: 5; flex: 1 0 100%; padding-left: .875rem; white-space: normal; line-height: 1.3; }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  html[data-fx="on"][data-delivery="directory"] #wg-dl-section .wg-dl-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(var(--wg-dl-r2), auto); column-gap: 1.5rem; }
+}
+@media (max-width: 639px) {
+  html[data-fx="on"][data-delivery="directory"] #wg-dl-section .wg-dl-areas { gap: 1.15rem; }
+  html[data-fx="on"][data-delivery="directory"] #wg-dl-section .wg-dl-hubhead h3 { font-size: 11px; letter-spacing: .16em; }
+  html[data-fx="on"][data-delivery="directory"] #wg-dl-section .wg-dl-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(var(--wg-dl-r2), auto); column-gap: .75rem; }
+  html[data-fx="on"][data-delivery="directory"] #wg-dl-section .wg-dl-card { flex-direction: column; flex-wrap: nowrap; align-items: flex-start; justify-content: flex-start; row-gap: .1rem; padding: .45rem .35rem .5rem; }
+  html[data-fx="on"][data-delivery="directory"] #wg-dl-section .wg-dl-namerow { align-self: stretch; }
+  html[data-fx="on"][data-delivery="directory"] #wg-dl-section .wg-dl-zips { order: 2; flex: none; padding-left: .775rem; }
+  html[data-fx="on"][data-delivery="directory"] #wg-dl-section .wg-dl-zips-long { max-width: calc(11.6em + .9rem); }
+  html[data-fx="on"][data-delivery="directory"] #wg-dl-section .wg-dl-go { order: 4; margin: .1rem 0 0; padding-left: .775rem; font-size: 9.5px; letter-spacing: .1em; }
+}
+
+/* ------------------------------------------------------------------------------------------
+   B · tiles — the card language kept, at a third of the size: name / ZIPs / Order delivery →
+   in a small tile, six-up; each hub starts its rows with a green label tile (name + count).
+   ------------------------------------------------------------------------------------------ */
+html[data-fx="on"][data-delivery="tiles"] #wg-dl-section .wg-dl-areas { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: .5rem; }
+html[data-fx="on"][data-delivery="tiles"] #wg-dl-section .wg-dl-head { grid-column: 1 / -1; padding-bottom: .3rem; }
+html[data-fx="on"][data-delivery="tiles"] #wg-dl-section :is(.wg-dl-hub, .wg-dl-grid) { display: contents; }
+html[data-fx="on"][data-delivery="tiles"] #wg-dl-section .wg-dl-hubhead { grid-column-start: 1; display: flex; min-width: 0; }
+html[data-fx="on"][data-delivery="tiles"] #wg-dl-section .wg-dl-hubhead > div {
+  flex: 1 1 auto; margin: 0; flex-direction: column; flex-wrap: nowrap; align-items: flex-start; justify-content: space-between; gap: .35rem;
+  padding: .62rem .78rem .66rem; border-radius: .8rem;
+  /* lightest stop kept dark enough for the cream type (≥ 5:1 at the top-left corner, where the heading sits) */
+  background: radial-gradient(140% 120% at 0% 0%, color-mix(in srgb, var(--fx-green) 92%, white) 0%, var(--fx-green) 45%, color-mix(in srgb, var(--fx-green) 70%, var(--fx-deep)) 100%);
+  box-shadow: 0 6px 14px -10px color-mix(in srgb, var(--fx-deep) 55%, transparent);
+}
+html[data-fx="on"][data-delivery="tiles"] #wg-dl-section .wg-dl-hubhead h3 { font-size: 10.5px; line-height: 1.45; letter-spacing: .16em; font-weight: 700; color: var(--fx-cream); }
+html[data-fx="on"][data-delivery="tiles"] #wg-dl-section .wg-dl-hubhead span { color: var(--fx-cream); }
+html[data-fx="on"][data-delivery="tiles"] #wg-dl-section .wg-dl-item { display: flex; }
+html[data-fx="on"][data-delivery="tiles"] #wg-dl-section .wg-dl-card {
+  flex: 1 1 auto; gap: 0; padding: .5rem .7rem .55rem; border: 1px solid var(--fx-line); border-radius: .8rem; background: var(--c-3);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--fx-ink) 5%, transparent); transform: none;
+  transition: transform .3s var(--fx-ease), box-shadow .3s var(--fx-ease), border-color .3s ease;
+}
+html[data-fx="on"][data-delivery="tiles"] #wg-dl-section .wg-dl-namerow { gap: .45rem; }
+html[data-fx="on"][data-delivery="tiles"] #wg-dl-section .wg-dl-name { font-size: 13px; line-height: 1.25; }
+html[data-fx="on"][data-delivery="tiles"] #wg-dl-section .wg-dl-zips { margin-top: .15rem; padding-left: .825rem; font-size: 10.5px; line-height: 1.35; font-weight: 500; letter-spacing: 0; }
+html[data-fx="on"][data-delivery="tiles"] #wg-dl-section .wg-dl-go { margin-top: .35rem; font-size: 9.5px; line-height: 1.25; letter-spacing: .12em; }
+html[data-fx="on"][data-delivery="tiles"] #wg-dl-section .wg-dl-card:is(:hover, :focus-visible) { transform: translateY(-2px); border-color: color-mix(in srgb, var(--fx-green) 38%, var(--fx-line)); box-shadow: var(--fx-shadow-lift); }
+html[data-fx="on"][data-delivery="tiles"] #wg-dl-section .wg-dl-card:focus-visible { outline: 2px solid var(--fx-green); outline-offset: 2px; border-radius: .8rem; }
+@media (max-width: 1279px) {
+  html[data-fx="on"][data-delivery="tiles"] #wg-dl-section .wg-dl-areas { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+@media (max-width: 1023px) {
+  html[data-fx="on"][data-delivery="tiles"] #wg-dl-section .wg-dl-areas { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  html[data-fx="on"][data-delivery="tiles"] #wg-dl-section .wg-dl-namerow { gap: .4rem; }
+  html[data-fx="on"][data-delivery="tiles"] #wg-dl-section .wg-dl-zips { padding-left: .775rem; font-size: 10px; letter-spacing: -.01em; }
+}
+@media (max-width: 639px) {
+  html[data-fx="on"][data-delivery="tiles"] #wg-dl-section .wg-dl-areas { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .4rem; }
+  html[data-fx="on"][data-delivery="tiles"] #wg-dl-section .wg-dl-card { padding: .5rem .5rem .55rem; }
+}
+
+/* ------------------------------------------------------------------------------------------
+   C · boards — the two hubs side by side, each a white board with its own header (name + count
+   pill) and a hairline grid of compact cells; stacked below 1024px.
+   ------------------------------------------------------------------------------------------ */
+html[data-fx="on"][data-delivery="boards"] #wg-dl-section .wg-dl-areas { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: .9rem; align-items: stretch; }
+html[data-fx="on"][data-delivery="boards"] #wg-dl-section .wg-dl-head { grid-column: 1 / -1; }
+html[data-fx="on"][data-delivery="boards"] #wg-dl-section .wg-dl-hub {
+  display: flex; flex-direction: column; min-width: 0; overflow: hidden;
+  border: 1px solid var(--fx-line); border-radius: 1rem; background: var(--c-3); box-shadow: var(--fx-shadow-soft);
+}
+html[data-fx="on"][data-delivery="boards"] #wg-dl-section .wg-dl-hubhead > div {
+  margin: 0; gap: .5rem; padding: .68rem 1rem .66rem; border-bottom: 1px solid var(--fx-line);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--fx-green) 7%, var(--c-3)), var(--c-3));
+}
+html[data-fx="on"][data-delivery="boards"] #wg-dl-section .wg-dl-hubhead h3 { font-size: 11.5px; line-height: 1.35; letter-spacing: .18em; font-weight: 700; color: var(--fx-ink); }
+html[data-fx="on"][data-delivery="boards"] #wg-dl-section .wg-dl-hubhead span { padding: .34rem .62rem .32rem; border-radius: 999px; line-height: 1; background: color-mix(in srgb, var(--fx-green) 11%, var(--c-3)); color: var(--fx-green); }
+html[data-fx="on"][data-delivery="boards"] #wg-dl-section .wg-dl-grid { flex: 1 1 auto; display: grid; gap: 0; margin-top: -1px; padding: 0 .5rem .5rem; }
+html[data-fx="on"][data-delivery="boards"] #wg-dl-section .wg-dl-hub-1 .wg-dl-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+html[data-fx="on"][data-delivery="boards"] #wg-dl-section .wg-dl-hub-2 .wg-dl-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+html[data-fx="on"][data-delivery="boards"] #wg-dl-section .wg-dl-item { display: flex; border-top: 1px solid var(--fx-line); }
+html[data-fx="on"][data-delivery="boards"] #wg-dl-section .wg-dl-card {
+  flex: 1 1 auto; justify-content: flex-start; gap: 0; padding: .5rem .55rem .55rem; border: 0; border-radius: .6rem; background: transparent; box-shadow: none; transform: none;
+  transition: background-color .2s ease;
+}
+html[data-fx="on"][data-delivery="boards"] #wg-dl-section .wg-dl-namerow { gap: .45rem; }
+html[data-fx="on"][data-delivery="boards"] #wg-dl-section .wg-dl-name { font-size: 13px; line-height: 1.25; }
+html[data-fx="on"][data-delivery="boards"] #wg-dl-section .wg-dl-zips { margin-top: .15rem; padding-left: .825rem; font-size: 10.5px; line-height: 1.35; font-weight: 500; letter-spacing: 0; }
+html[data-fx="on"][data-delivery="boards"] #wg-dl-section .wg-dl-go { margin-top: .35rem; font-size: 9.5px; line-height: 1.25; letter-spacing: .12em; }
+html[data-fx="on"][data-delivery="boards"] #wg-dl-section .wg-dl-card:is(:hover, :focus-visible) { background: color-mix(in srgb, var(--fx-green) 7%, var(--c-3)); transform: none; box-shadow: none; }
+html[data-fx="on"][data-delivery="boards"] #wg-dl-section .wg-dl-card:is(:hover, :focus-visible) .wg-dl-name { color: var(--fx-green); }
+html[data-fx="on"][data-delivery="boards"] #wg-dl-section .wg-dl-card:focus-visible { outline: 2px solid var(--fx-green); outline-offset: -2px; border-radius: .6rem; }
+@media (max-width: 1279px) {
+  html[data-fx="on"][data-delivery="boards"] #wg-dl-section .wg-dl-areas { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); }
+  html[data-fx="on"][data-delivery="boards"] #wg-dl-section .wg-dl-hub-2 .wg-dl-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 1023px) {
+  html[data-fx="on"][data-delivery="boards"] #wg-dl-section .wg-dl-areas { grid-template-columns: minmax(0, 1fr); }
+  html[data-fx="on"][data-delivery="boards"] #wg-dl-section .wg-dl-hub-1 .wg-dl-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  html[data-fx="on"][data-delivery="boards"] #wg-dl-section .wg-dl-hub-2 .wg-dl-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 639px) {
+  html[data-fx="on"][data-delivery="boards"] #wg-dl-section :is(.wg-dl-hub-1, .wg-dl-hub-2) .wg-dl-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 0 .35rem .35rem; }
+  html[data-fx="on"][data-delivery="boards"] #wg-dl-section .wg-dl-hubhead > div { padding: .6rem .75rem; }
+  html[data-fx="on"][data-delivery="boards"] #wg-dl-section .wg-dl-hubhead h3 { font-size: 10px; letter-spacing: .12em; }
+  html[data-fx="on"][data-delivery="boards"] #wg-dl-section .wg-dl-card { padding: .45rem .45rem .5rem; }
+}
+
+/* ------------------------------------------------------------------------------------------
+   Phones, all three: names and four-ZIP lists keep one line in a two-up cell (English and Spanish)
+   ------------------------------------------------------------------------------------------ */
+@media (max-width: 639px) {
+  html[data-fx="on"]:is([data-delivery="directory"], [data-delivery="tiles"], [data-delivery="boards"]) #wg-dl-section .wg-dl-namerow { gap: .4rem; }
+  html[data-fx="on"]:is([data-delivery="directory"], [data-delivery="tiles"], [data-delivery="boards"]) #wg-dl-section .wg-dl-name { font-size: 13px; letter-spacing: -.01em; }
+  html[data-fx="on"]:is([data-delivery="directory"], [data-delivery="tiles"], [data-delivery="boards"]) #wg-dl-section .wg-dl-zips { padding-left: .775rem; font-size: 10px; letter-spacing: -.01em; }
+}
