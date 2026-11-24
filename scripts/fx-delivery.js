@@ -14,7 +14,7 @@
   var q;
   try { q = new URLSearchParams(location.search); } catch (e) { return; }
   var NAMES = { a: 'directory', b: 'tiles', c: 'boards', directory: 'directory', tiles: 'tiles', boards: 'boards' };
-  var raw = (q.get('delivery') || '').toLowerCase();
+  var raw = (q.get('delivery') || 'boards').toLowerCase();   // owner-locked default 2026-11-24: C · Boards (?delivery=current = the original)
   var v = Object.prototype.hasOwnProperty.call(NAMES, raw) ? NAMES[raw] : '';
   var jump = q.get('jump') === '1';
   if (!v && !(raw === 'current' && jump)) return;

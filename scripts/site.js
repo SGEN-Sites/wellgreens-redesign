@@ -889,10 +889,10 @@
     var track = $$('div.relative.z-10.flex', sticky).filter(function (x) { return /translate3d/.test(x.getAttribute('style') || ''); })[0];
     var text = $$('div.pointer-events-none.absolute', sticky).filter(function (x) { return /translate3d\(0,-50%,0\)/.test((x.getAttribute('style') || '').replace(/\s/g, '')); })[0];
     if (!track) return;
-    var wide = mq('(min-width: 768px)'), travel = 0, pinH = 0, lx = '', lt = '';
+    var wide = mq('(min-width: 768px)'), travel = 0, pinH = 0, lx = '', lt = '', still = false;
     var readPin = function () { pinH = parseFloat(getComputedStyle(html).getPropertyValue('--header-pinned-h')) || 0; };
     var frame = function () {
-      if (RM.matches || !wide.matches) return;
+      if (still || RM.matches || !wide.matches) return;
       var a = spacer.offsetHeight; if (a <= 0) return;
       var top = sec.getBoundingClientRect().top, t = Math.max(0, Math.min(1, (pinH - top) / a));
       var e = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2, x = -(e * travel);
@@ -904,6 +904,9 @@
       // reduced motion: live still sizes the runway (its layout effect runs once before the media
       // query is read) but never moves the track; same here
       if (!wide.matches) { track.style.transform = 'translate3d(0,0,0)'; if (text) text.style.transform = 'translate3d(0,-50%,0)'; spacer.style.height = ''; lx = lt = ''; return; }
+      // premium layer (owner, 2026-11-24): not scroll-dependent; the cards sit still in a grid and there is no runway
+      still = html.getAttribute('data-fx') !== 'off' && (getComputedStyle(sec).getPropertyValue('--wg-pin-still') || '').trim() === '1';
+      if (still) { track.style.transform = 'none'; if (text) text.style.transform = 'translate3d(0,-50%,0)'; spacer.style.height = '0px'; lx = lt = ''; return; }
       travel = Math.max(0, track.scrollWidth - w.innerWidth); readPin();
       var k = parseFloat(getComputedStyle(sec).getPropertyValue('--wg-pin-runway')) || 1;
       spacer.style.height = Math.round(Math.max(0.18 * w.innerHeight, 0.28 * travel * k)) + 'px';

@@ -9,7 +9,7 @@
   var d = document, html = d.documentElement;
   if (html.getAttribute('data-fx') !== 'on') return;
   var q; try { q = new URLSearchParams(location.search); } catch (e) { return; }
-  var v = q.get('stores'), jump = q.get('jump') === '1';
+  var v = q.get('stores') || 'split', jump = q.get('jump') === '1';   // owner-locked default 2026-11-24: A · Split (?stores=current = the original)
   var on = v === 'split' || v === 'strip' || v === 'grid';
   if (!on && !(jump && v === 'current')) return;
 
