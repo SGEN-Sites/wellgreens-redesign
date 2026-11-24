@@ -633,7 +633,7 @@ html[data-fx="on"] section:has(a[data-cta="exclusive_brand"]) a[data-cta="exclus
 html[data-fx="on"] section:has(a[data-cta="exclusive_brand"]) a[data-cta="exclusive_brand"]:is(:hover, :focus-visible) .mt-4 { opacity: 1; transform: none !important; }
 html[data-fx="on"] section:has(a[data-cta="exclusive_brand"]) a[data-cta="exclusive_brand"] .mt-4 p { color: color-mix(in srgb, var(--c-2) 80%, transparent); font-size: 10px; letter-spacing: .2em; }
 html[data-fx="on"] .wg-mq { position: relative; overflow: hidden; width: 100vw; margin: clamp(1.6rem, 3vw, 2.6rem) 0 0 calc(50% - 50vw); padding: .5rem 0 1.9rem;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 9%, #000 91%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 9%, #000 91%, transparent 100%); }
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, var(--c-6) 9%, var(--c-6) 91%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0, var(--c-6) 9%, var(--c-6) 91%, transparent 100%); }
 html[data-fx="on"] .wg-mq .wg-mq-track { display: flex; width: max-content; will-change: transform; }
 html[data-fx="on"] .wg-mq .wg-mq-track > .wg-mq-set.grid { display: flex; flex-wrap: nowrap; gap: 0; grid-template-columns: none; }
 html[data-fx="on"] .wg-mq .wg-mq-track > .wg-mq-set > div { flex: 0 0 auto; width: clamp(128px, 14vw, 220px); margin-right: clamp(2.5rem, 5vw, 5rem); opacity: 1; }

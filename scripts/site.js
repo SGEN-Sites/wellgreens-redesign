@@ -314,6 +314,9 @@
     // restore the visitor's state first (the site CSS locks the page while a box is unchecked)
     var slug = store.get(STORE_KEY);
     if (!(slug && STORES[slug])) slug = urlStore();
+    // premium layer (owner, 2026-11-25): a new visitor who lands anywhere but a store's own page starts on City Heights, so
+    // the store picker does not interrupt (the 21+ check stays); ?fx=off keeps the live flow: choose a store first
+    if (!slug && html.getAttribute('data-fx') !== 'off' && STORES['city-heights-home-ave']) slug = 'city-heights-home-ave';
     if (slug) { storeCb.checked = true; selected = slug; if (store.get(STORE_KEY) !== slug) store.set(STORE_KEY, slug); }
     if (store.get(AGE_KEY) === 'true') ageCb.checked = true;
     if (bypass) {

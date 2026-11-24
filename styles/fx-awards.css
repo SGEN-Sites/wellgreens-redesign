@@ -1,1 +1,158 @@
-/* fx-awards: held back from this publish (work in progress) */
+/* fx-awards.css: award badges out of their boxes, 3D (reflection + shine), carousel options (?awards=<variant>); scoped html[data-fx="on"]. */
+
+/* ==========================================================================================
+   Home "California's Best." (ES "Lo mejor de California."): the five award badges.
+   fx-awards.js tags the section's own nodes (wg-aw-*) and adds, per badge, two empty decorative
+   layers (aria-hidden): .wg-aw-shine (gloss, light sweep, pointer glint) and .wg-aw-mirror (the
+   reflection for browsers without -webkit-box-reflect). Both are masked with the badge's own
+   image, so light never lands outside the shield. No image, word, link or name changes.
+   ========================================================================================== */
+
+/* ---------------------------------------------------------------- 1. out of the boxes */
+html[data-fx="on"] .wg-aw-sec .wg-aw-group { container-type: inline-size; }
+html[data-fx="on"] .wg-aw-sec .wg-aw-reg .wg-aw-card {
+  --wg-aw-w: min(88cqi, 214px);
+  position: relative; flex: none; width: var(--wg-aw-w); height: calc(var(--wg-aw-w) * 1.5); aspect-ratio: auto;
+  padding: 0; border: 0; border-radius: 0; background: none; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none;
+  transform: perspective(900px) rotateX(var(--wg-aw-rx, 0deg)) rotateY(var(--wg-aw-ry, 0deg)) translateZ(var(--wg-aw-z, 0px));
+  transition: none;
+  /* the mirror: starts at the shield's tip (the artwork has ~5% clear space under it), short and faded */
+  -webkit-box-reflect: below calc(var(--wg-aw-w) * -.153) linear-gradient(to bottom, transparent 70%, color-mix(in srgb, var(--c-2) 34%, transparent));
+}
+html[data-fx="on"] .wg-aw-sec .wg-aw-reg .wg-aw-corner { display: none; }
+html[data-fx="on"] .wg-aw-sec .wg-aw-reg .wg-aw-img {
+  display: block; width: 100%; height: 100%; padding: 0; object-fit: contain; object-position: 50% 50%;
+  /* contact shadow that follows the shield's alpha, tinted with the brand's deep green */
+  filter: drop-shadow(0 2px 2px color-mix(in srgb, var(--fx-deep) 20%, transparent)) drop-shadow(0 12px 14px color-mix(in srgb, var(--fx-deep) 16%, transparent));
+  transition: none; -webkit-user-drag: none; user-select: none;
+}
+
+/* ---------------------------------------------------------------- 2. light: gloss, sweep, glint */
+html[data-fx="on"] .wg-aw-shine,
+html[data-fx="on"] .wg-aw-mirror {
+  position: absolute; inset: 0; display: block; pointer-events: none; overflow: hidden;
+  -webkit-mask: var(--wg-aw-src) 50% 50% / contain no-repeat; mask: var(--wg-aw-src) 50% 50% / contain no-repeat;
+}
+/* a still gloss: light from the top left, a touch of shade at the foot, as on an enamel badge */
+html[data-fx="on"] .wg-aw-shine {
+  --wg-aw-light: var(--c-3);
+  background:
+    linear-gradient(158deg, color-mix(in srgb, var(--wg-aw-light) 26%, transparent) 0%, color-mix(in srgb, var(--wg-aw-light) 8%, transparent) 26%, transparent 44%),
+    linear-gradient(to top, color-mix(in srgb, var(--fx-deep) 14%, transparent), transparent 30%);
+}
+/* the light sweep: one narrow band crossing the shield (on arrival, on hover) */
+html[data-fx="on"] .wg-aw-shine::before {
+  content: ""; position: absolute; top: -10%; bottom: -10%; left: 0; width: 55%;
+  background: linear-gradient(100deg, transparent 20%, color-mix(in srgb, var(--wg-aw-light) 62%, transparent) 50%, transparent 80%);
+  transform: translateX(-120%) skewX(-14deg); opacity: 0;
+}
+html[data-fx="on"] .wg-aw-card.wg-aw-sweep .wg-aw-shine::before {
+  animation: wg-aw-sweep 1.5s cubic-bezier(.3, .12, .25, 1) var(--wg-aw-sd, 0ms) both;
+}
+@keyframes wg-aw-sweep {
+  0% { transform: translateX(-120%) skewX(-14deg); opacity: 1; }
+  100% { transform: translateX(260%) skewX(-14deg); opacity: 1; }
+}
+/* the glint: a soft highlight under the pointer (fine pointers) */
+html[data-fx="on"] .wg-aw-shine::after {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--wg-aw-light) 42%, transparent), color-mix(in srgb, var(--wg-aw-light) 12%, transparent) 55%, transparent);
+  transform: translate(calc((var(--wg-aw-gx, .5) - .5) * 100%), calc((var(--wg-aw-gy, .3) - .5) * 100%)) scale(.9);
+  opacity: 0; transition: opacity .45s ease;
+}
+html[data-fx="on"] .wg-aw-card.wg-aw-hot .wg-aw-shine::after { opacity: 1; }
+
+/* reflection fallback (Firefox): a flipped, faded copy of the same image under the shield */
+html[data-fx="on"] .wg-aw-mirror { display: none; }
+@supports not (-webkit-box-reflect: below) {
+  html[data-fx="on"] .wg-aw-mirror {
+    display: block; inset: auto 0; top: 89.8%; height: 100%; overflow: visible;
+    background: var(--wg-aw-src) 50% 50% / contain no-repeat; transform: scaleY(-1);
+    -webkit-mask: linear-gradient(to bottom, transparent 70%, color-mix(in srgb, var(--c-6) 34%, transparent)); mask: linear-gradient(to bottom, transparent 70%, color-mix(in srgb, var(--c-6) 34%, transparent));
+  }
+}
+
+/* ---------------------------------------------------------------- 3. the default row: room for the mirror */
+/* the reflection reaches ~0.2 of a badge's height below it and fades out; the phone row is a scroller (it clips) */
+@media (max-width: 639px) {
+  html[data-fx="on"]:not([data-awards]) .wg-aw-sec .wg-aw-reg { padding-top: .75rem; padding-bottom: 3.5rem; }
+}
+@media (min-width: 640px) {
+  html[data-fx="on"]:not([data-awards]) .wg-aw-sec .wg-aw-reg { row-gap: 5.5rem; padding-bottom: 2rem; }
+}
+
+/* ==========================================================================================
+   4. carousels (?awards=coverflow | ring): the region becomes a 3D stage. fx-awards.js places the
+      five badges (same nodes, same order) and adds the controls row; no copies are made.
+   ========================================================================================== */
+html[data-fx="on"][data-awards] .wg-aw-sec .wg-aw-reg {
+  --wg-aw-cw: 160px; --wg-aw-top: 1.25rem; --wg-aw-floor: 4.25rem;
+  display: block; position: relative; overflow: visible; overflow-x: clip; scroll-snap-type: none;
+  height: calc(var(--wg-aw-cw) * 1.5 + var(--wg-aw-top) + var(--wg-aw-floor) + 2.75rem);
+  perspective: 1000px; perspective-origin: 50% 38%;
+  touch-action: pan-y; user-select: none; -webkit-user-select: none; cursor: grab;
+}
+html[data-fx="on"][data-awards] .wg-aw-sec .wg-aw-reg.wg-aw-drag { cursor: grabbing; }
+@media (min-width: 640px) { html[data-fx="on"][data-awards] .wg-aw-sec .wg-aw-reg { --wg-aw-cw: 184px; --wg-aw-top: 1.5rem; --wg-aw-floor: 5rem; } }
+@media (min-width: 1024px) { html[data-fx="on"][data-awards] .wg-aw-sec .wg-aw-reg { --wg-aw-cw: 196px; } }
+@media (min-width: 1280px) { html[data-fx="on"][data-awards] .wg-aw-sec .wg-aw-reg { --wg-aw-cw: 212px; } }
+html[data-fx="on"][data-awards] .wg-aw-sec .wg-aw-item {
+  position: absolute; left: 50%; top: var(--wg-aw-top); width: var(--wg-aw-cw); margin: 0 0 0 calc(var(--wg-aw-cw) / -2);
+  transform-origin: 50% 50%; backface-visibility: hidden; cursor: pointer;
+}
+html[data-fx="on"][data-awards="ring"] .wg-aw-sec .wg-aw-reg { --wg-aw-top: 2rem; }
+@media (max-width: 639px) { html[data-fx="on"][data-awards="ring"] .wg-aw-sec .wg-aw-reg { --wg-aw-cw: 132px; } }
+html[data-fx="on"][data-awards] .wg-aw-sec .wg-aw-reg .wg-aw-card { --wg-aw-w: 100cqi; }
+/* depth: a veil masked to the shield (shade on the far edge in the coverflow, haze at the back of the ring) */
+html[data-fx="on"] .wg-aw-fog {
+  position: absolute; inset: 0; display: block; pointer-events: none; opacity: 0;
+  -webkit-mask: var(--wg-aw-src) 50% 50% / contain no-repeat; mask: var(--wg-aw-src) 50% 50% / contain no-repeat;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--fx-deep) 12%, transparent), color-mix(in srgb, var(--fx-deep) 50%, transparent));
+}
+html[data-fx="on"] .wg-aw-fog.wg-aw-r { background: linear-gradient(270deg, color-mix(in srgb, var(--fx-deep) 12%, transparent), color-mix(in srgb, var(--fx-deep) 50%, transparent)); }
+html[data-fx="on"][data-awards="ring"] .wg-aw-fog { background: color-mix(in srgb, var(--fx-cream) 78%, transparent); }
+
+/* the glossy floor the badges stand on (fx-awards.js puts --wg-aw-floor-y on the front shield's tip) */
+html[data-fx="on"][data-awards] .wg-aw-sec .wg-aw-reg::before {
+  content: ""; position: absolute; left: 0; right: 0; pointer-events: none; z-index: 0;
+  top: calc(var(--wg-aw-floor-y, calc(var(--wg-aw-top) + var(--wg-aw-cw) * 1.42)) - 2.25rem); height: calc(var(--wg-aw-cw) * .5 + 2.25rem);
+  background:
+    radial-gradient(30% 46% at 50% 2.25rem, color-mix(in srgb, var(--fx-green) 14%, transparent), transparent 100%),
+    linear-gradient(to bottom, transparent, color-mix(in srgb, var(--fx-ink) 5%, transparent) 2.25rem, transparent 92%);
+  -webkit-mask: linear-gradient(90deg, transparent, var(--c-6) 18%, var(--c-6) 82%, transparent); mask: linear-gradient(90deg, transparent, var(--c-6) 18%, var(--c-6) 82%, transparent);
+}
+/* controls: back, pause/play, forward; 44px, the site's round white buttons */
+html[data-fx="on"] .wg-aw-ctrl { display: none; }
+html[data-fx="on"][data-awards] .wg-aw-ctrl {
+  position: absolute; left: 50%; bottom: 0; z-index: 200; display: flex; gap: .6rem; transform: translateX(-50%); cursor: auto;
+}
+html[data-fx="on"][data-awards] .wg-aw-ctrl button {
+  width: 44px; height: 44px; display: grid; place-items: center; padding: 0; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--fx-line); background: var(--c-3); color: var(--fx-ink); box-shadow: var(--fx-shadow-soft);
+  transition: background-color .25s ease, color .25s ease, border-color .25s ease, transform .35s var(--fx-ease);
+}
+html[data-fx="on"][data-awards] .wg-aw-ctrl button:hover { background: var(--fx-green); border-color: var(--fx-green); color: var(--fx-cream); transform: translateY(-1px); }
+html[data-fx="on"][data-awards] .wg-aw-ctrl button:focus-visible { outline: 2px solid var(--fx-green); outline-offset: 2px; border-radius: 999px; }
+html[data-fx="on"][data-awards] .wg-aw-ctrl svg { width: 18px; height: 18px; pointer-events: none; }
+html[data-fx="on"][data-awards] .wg-aw-sec .wg-aw-reg:focus-visible { outline: 2px solid var(--fx-green); outline-offset: 6px; border-radius: 14px; }
+
+/* the front badge keeps a stronger gloss; the others are calmer */
+html[data-fx="on"][data-awards] .wg-aw-item:not(.wg-aw-front) .wg-aw-shine { opacity: .55; }
+html[data-fx="on"][data-awards] .wg-aw-shine { transition: opacity .5s ease; }
+
+/* ring: an elevated view onto a turntable disc; fx-awards.js sizes the disc to the ring of shield tips */
+html[data-fx="on"][data-awards="ring"] .wg-aw-sec .wg-aw-reg { perspective: 900px; perspective-origin: 50% 4%; }
+html[data-fx="on"][data-awards="ring"] .wg-aw-sec .wg-aw-reg::before {
+  left: 50%; right: auto; top: var(--wg-aw-disc-y, 70%); width: min(100%, var(--wg-aw-disc-w, 80%)); height: var(--wg-aw-disc-h, 30%);
+  transform: translate(-50%, -50%); border-radius: 50%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--c-3) 90%, transparent), color-mix(in srgb, var(--c-3) 45%, transparent) 64%, color-mix(in srgb, var(--fx-green) 9%, transparent) 90%, transparent 100%);
+  box-shadow: 0 18px 30px -22px color-mix(in srgb, var(--fx-deep) 35%, transparent);
+  -webkit-mask: none; mask: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-fx="on"] .wg-aw-card.wg-aw-sweep .wg-aw-shine::before { animation: none; }
+  html[data-fx="on"]:not([data-awards]) .wg-aw-sec .wg-aw-reg .wg-aw-card { transform: none; }
+  html[data-fx="on"][data-awards] .wg-aw-ctrl button,
+  html[data-fx="on"][data-awards] .wg-aw-shine { transition: none; }
+}
