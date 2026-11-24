@@ -15,7 +15,7 @@
   try { q = new URLSearchParams(location.search); } catch (e) { return; }
   var NAMES = { a: 'directory', b: 'tiles', c: 'boards', directory: 'directory', tiles: 'tiles', boards: 'boards' };
   var raw = (q.get('delivery') || '').toLowerCase();
-  var v = NAMES[raw] || '';
+  var v = Object.prototype.hasOwnProperty.call(NAMES, raw) ? NAMES[raw] : '';
   var jump = q.get('jump') === '1';
   if (!v && !(raw === 'current' && jump)) return;
 

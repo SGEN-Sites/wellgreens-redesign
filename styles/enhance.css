@@ -607,8 +607,8 @@ html[data-fx="on"][data-picker="grid-carousel"] .location-selector-overlay [data
 
 /* ===================================================================== owner round, 2026-11-24 (late) */
 
-/* Partner logos — the section on Wellgreens green, the logos without their tiles, in a marquee that reacts to scrolling
-   (enhance.js: it speeds up with the scroll, follows its direction, and eases to a stop under the pointer or keyboard focus).
+/* Partner logos — the section on Wellgreens green, the logos without their tiles, in a steady marquee (enhance.js: it does
+   not react to scrolling, stops under the pointer or keyboard focus, and a touch pauses it so a logo can be tapped).
    The brand name under each logo shows on hover/focus; with reduced motion the logos sit in a still, centred row. */
 html[data-fx="on"] section:has(a[data-cta="exclusive_brand"]) {
   background: radial-gradient(120% 170% at 100% 0%, color-mix(in srgb, var(--c-10) 18%, var(--c-4)) 0%, var(--c-4) 46%, color-mix(in srgb, var(--c-7) 45%, var(--c-4)) 100%);

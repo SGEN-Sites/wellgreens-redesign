@@ -311,8 +311,9 @@
 
 /* ===================================================================== owner round, 2026-11-24 (late) */
 
-/* Partner logos: a marquee that reacts to scrolling. The six original links stay where they are in the reading
-   order (keyboard and screen readers meet each once); the copies that fill the loop are aria-hidden and inert. */
+/* Partner logos: a steady marquee, independent of scrolling (owner: a target that speeds up with the scroll is hard
+   to click). It stops under the pointer, a touch pauses it for a few seconds, and keyboard focus stops it with the
+   focused logo in view. The six original links stay in the reading order once; the loop's copies are aria-hidden + inert. */
 (function () {
   'use strict';
   var d = document, html = d.documentElement;
@@ -327,7 +328,7 @@
   set.classList.add('wg-mq-set'); set.setAttribute('role', 'list');
   [].forEach.call(set.children, function (it) { it.setAttribute('role', 'listitem'); });
   if (reduce) { mq.classList.add('wg-mq-static'); return; }
-  var copies = [], W = 0, x = 0, base = 38, boost = 0, dir = 1, mult = 1, multT = 1, on = false, seen = false, raf = 0, last = 0, lastY = window.scrollY;
+  var copies = [], W = 0, x = 0, base = 30, mult = 1, multT = 1, on = false, seen = false, raf = 0, last = 0, resume = 0;
   var copy = function () {
     var c = set.cloneNode(true);
     c.setAttribute('aria-hidden', 'true'); c.setAttribute('inert', ''); c.removeAttribute('role');
@@ -341,19 +342,17 @@
   var fit = function () { W = set.getBoundingClientRect().width; var need = Math.ceil(mq.clientWidth / Math.max(W, 1)) + 1; while (copies.length < need) copy(); wrap(); paint(); };
   var frame = function (t) {
     var dt = Math.min(0.05, last ? (t - last) / 1000 : 0.016); last = t;
-    mult += (multT - mult) * Math.min(1, dt * 5);
-    boost *= Math.pow(0.05, dt);
-    x -= (base + boost) * mult * dir * dt; wrap(); paint();
+    mult += (multT - mult) * Math.min(1, dt * (multT < mult ? 14 : 3));   // stops in about 0.15 s, picks up gently
+    x -= base * mult * dt; wrap(); paint();
     raf = on ? requestAnimationFrame(frame) : 0;
   };
   var start = function () { if (!on && seen && !d.hidden) { on = true; last = 0; raf = requestAnimationFrame(frame); } };
   var stop = function () { on = false; if (raf) cancelAnimationFrame(raf); raf = 0; };
-  addEventListener('scroll', function () {
-    var y = window.scrollY, dy = y - lastY; lastY = y; if (!dy) return;
-    dir = dy > 0 ? 1 : -1; boost = Math.min(520, boost + Math.abs(dy) * 3.2);
-  }, { passive: true });
-  mq.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') multT = 0; });
-  mq.addEventListener('pointerleave', function () { multT = 1; });
+  mq.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { clearTimeout(resume); multT = 0; } });
+  mq.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') multT = 1; });
+  var hold = function (e) { if (e.pointerType !== 'mouse') { clearTimeout(resume); multT = 0; mult = 0; } };
+  var release = function (e) { if (e.pointerType !== 'mouse') { clearTimeout(resume); resume = setTimeout(function () { multT = 1; }, 3000); } };
+  mq.addEventListener('pointerdown', hold); mq.addEventListener('pointerup', release); mq.addEventListener('pointercancel', release);
   // keyboard: stop and bring the focused logo into view (the originals sit at the start of the track)
   mq.addEventListener('focusin', function (e) {
     multT = 0; mult = 0; var it = e.target.closest && e.target.closest('[role="listitem"]'); if (!it) return;
@@ -435,4 +434,11 @@
     post.addEventListener('focusin', function (e) { if (back.contains(e.target)) face(1); });
     post.addEventListener('focusout', function (e) { if (!post.contains(e.relatedTarget)) face(0); });
   });
+})();
+
+/* Cross-document view transitions: when the browser aborts one (e.g. a tap that navigates mid-animation on a phone),
+   the transition's own promises reject with nobody listening, which shows up as an unhandled error. Listen, quietly. */
+(function () {
+  var quiet = function (e) { var vt = e && e.viewTransition; if (!vt) return; ['ready', 'finished', 'updateCallbackDone'].forEach(function (k) { if (vt[k] && vt[k].catch) vt[k].catch(function () {}); }); };
+  addEventListener('pageswap', quiet); addEventListener('pagereveal', quiet);
 })();
