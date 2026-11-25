@@ -741,3 +741,17 @@ html.wg-deals-pending #daily-deals > :first-child { scroll-snap-type: none !impo
   html[data-fx="on"] .grid[class~="gap-px"][class~="auto-rows-max"][class~="bg-secondary"] { gap: .75rem; background: transparent; border-radius: 0; overflow: visible; }
   html[data-fx="on"] .grid[class~="gap-px"][class~="auto-rows-max"][class~="bg-secondary"] .group { border-radius: 1rem; }
 }
+
+/* ===================================================================== page speed: the first frames on a renderer with no
+   GPU (PageSpeed's test phones: Linux, software compositing). Its phone runs painted nothing until ~2.4 s although the page
+   had loaded at 0.8 s (desktop: 0.6 s). Phone-only in the first screen: the 21+ gate blurs the whole page behind it
+   (backdrop-filter: blur(18px)) while the header ticker moves underneath, so the blur is redrawn every frame.
+   - while the intro covers the screen, the gate is not blurred (nothing of it shows; the blur returns as the intro lifts)
+   - while the age check is open, the ticker behind it holds still (it only shows blurred there)
+   - the intro's cover gets an opaque base colour under its gradient, so the compositor can skip what it hides */
+html[data-fx="on"].wg-splash-pending .age-gate-overlay,
+html[data-fx="on"].wg-splashing .age-gate-overlay { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+html[data-fx="on"].wg-splash-pending .animate-marquee,
+html[data-fx="on"].wg-splashing .animate-marquee,
+html[data-fx="on"]:not(.gate-bypass):has(#age-verify-cb:not(:checked)) .animate-marquee { animation-play-state: paused !important; }
+html.wg-splash-pending body::after { background-color: var(--fx-forest); }

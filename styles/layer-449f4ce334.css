@@ -685,6 +685,12 @@ html.wg-deals-pending #daily-deals > :first-child { scroll-snap-type: none !impo
   html[data-fx="on"] .grid[class~="gap-px"][class~="auto-rows-max"][class~="bg-secondary"] { gap: .75rem; background: transparent; border-radius: 0; overflow: visible; }
   html[data-fx="on"] .grid[class~="gap-px"][class~="auto-rows-max"][class~="bg-secondary"] .group { border-radius: 1rem; }
 }
+html[data-fx="on"].wg-splash-pending .age-gate-overlay,
+html[data-fx="on"].wg-splashing .age-gate-overlay { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+html[data-fx="on"].wg-splash-pending .animate-marquee,
+html[data-fx="on"].wg-splashing .animate-marquee,
+html[data-fx="on"]:not(.gate-bypass):has(#age-verify-cb:not(:checked)) .animate-marquee { animation-play-state: paused !important; }
+html.wg-splash-pending body::after { background-color: var(--fx-forest); }
 html[data-fx="on"] .wg-aw-sec .wg-aw-group { container-type: inline-size; }
 html[data-fx="on"] .wg-aw-sec .wg-aw-reg .wg-aw-card {
   --wg-aw-w: min(88cqi, 214px);
