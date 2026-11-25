@@ -319,6 +319,7 @@
     if (!slug && html.getAttribute('data-fx') !== 'off' && STORES['city-heights-home-ave']) slug = 'city-heights-home-ave';
     if (slug) { storeCb.checked = true; selected = slug; if (store.get(STORE_KEY) !== slug) store.set(STORE_KEY, slug); }
     if (store.get(AGE_KEY) === 'true') ageCb.checked = true;
+    else if (ageCb.checked) store.set(AGE_KEY, 'true');   // ticked before this script ran (it now runs after the first frame)
     if (bypass) {
       if (siteContent) { siteContent.removeAttribute('inert'); siteContent.removeAttribute('aria-hidden'); siteContent.classList.remove('site-content--gated'); }
       return;

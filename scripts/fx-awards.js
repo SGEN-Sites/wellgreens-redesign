@@ -47,7 +47,9 @@
     card.addEventListener('animationend', function (e) { if (e.animationName === 'wg-aw-sweep') card.classList.remove('wg-aw-sweep'); });
     return b;
   });
-  var armed = false, arm = function () { if (armed) return; armed = true; badges.forEach(function (b) { b.shine.style.setProperty('--wg-aw-src', b.src); b.mirror.style.setProperty('--wg-aw-src', b.src); }); };
+  // the badge picture for every masked layer (shine, mirror, the carousel's fog) is set on the card, as the section approaches;
+  // until then the layers stay hidden, so none can paint as a plain rectangle
+  var armed = false, arm = function () { if (armed) return; armed = true; badges.forEach(function (b) { b.card.style.setProperty('--wg-aw-src', b.src); }); if (sec) sec.classList.add('wg-aw-armed'); };
   if ('IntersectionObserver' in window) { var aio = new IntersectionObserver(function (es) { if (es.some(function (e) { return e.isIntersecting; })) { arm(); aio.disconnect(); } }, { rootMargin: '800px 0px' }); aio.observe(sec || reg); } else arm();
   var n = badges.length;
   if (n < 2) return;

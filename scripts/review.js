@@ -13,12 +13,14 @@
   // ?openpicker=1 (review only): open the store picker once the page is up, to compare picker layouts
   try {
     if (new URLSearchParams(location.search).get('openpicker') === '1') {
-      window.addEventListener('load', function () {
+      // scripts now run after the first painted frame, so the page may already have loaded
+      var openIt = function () {
         setTimeout(function () {
           var t = [].slice.call(document.querySelectorAll('[data-store-trigger]')).filter(function (e) { return e.offsetParent !== null; })[0];
           if (t) t.click();
         }, 350);
-      });
+      };
+      if (document.readyState === 'complete') openIt(); else window.addEventListener('load', openIt);
     }
   } catch (e) {}
   if (!on) return;

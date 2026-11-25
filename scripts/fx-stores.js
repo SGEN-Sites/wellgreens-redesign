@@ -50,7 +50,7 @@
     // site.js recounts the rail's pages on its scroll/resize; a new layout can change the count without either
     var recount = function () { rail.dispatchEvent(new Event('scroll')); };
     requestAnimationFrame(function () { requestAnimationFrame(recount); });
-    addEventListener('load', recount);
+    if (d.readyState === 'complete') recount(); else addEventListener('load', recount);
     if (d.fonts && d.fonts.ready) d.fonts.ready.then(recount);
   }
 

@@ -787,6 +787,7 @@ html[data-fx="on"][data-awards="ring"] .wg-aw-sec .wg-aw-reg::before {
   html[data-fx="on"][data-awards] .wg-aw-ctrl button,
   html[data-fx="on"][data-awards] .wg-aw-shine { transition: none; }
 }
+html[data-fx="on"] .wg-aw-sec:not(.wg-aw-armed) :is(.wg-aw-shine, .wg-aw-mirror, .wg-aw-fog) { visibility: hidden; }
 html[data-fx="on"]:is([data-delivery="directory"], [data-delivery="tiles"], [data-delivery="boards"]) #wg-dl-section .wg-dl-areas { margin-top: 1.5rem; }
 html[data-fx="on"]:is([data-delivery="directory"], [data-delivery="tiles"], [data-delivery="boards"]) #wg-dl-section .wg-dl-head > div { margin-bottom: 0; align-items: baseline; }
 html[data-fx="on"]:is([data-delivery="directory"], [data-delivery="tiles"], [data-delivery="boards"]) #wg-dl-section .wg-dl-head h3 { font-size: 13px; line-height: 1.3; letter-spacing: .24em; font-weight: 700; color: var(--fx-ink); }

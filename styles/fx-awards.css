@@ -156,3 +156,5 @@ html[data-fx="on"][data-awards="ring"] .wg-aw-sec .wg-aw-reg::before {
   html[data-fx="on"][data-awards] .wg-aw-ctrl button,
   html[data-fx="on"][data-awards] .wg-aw-shine { transition: none; }
 }
+/* the masked layers wait for the badge picture (set as the section approaches, page speed 2026-11-25): never a bare rectangle */
+html[data-fx="on"] .wg-aw-sec:not(.wg-aw-armed) :is(.wg-aw-shine, .wg-aw-mirror, .wg-aw-fog) { visibility: hidden; }

@@ -476,7 +476,10 @@
     var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { animate(e.target); io.unobserve(e.target); } }); }, { threshold: 0.6 });
     figs.forEach(function (f) { io.observe(f); });
   };
-  var later = function () { setTimeout(function () { (window.requestIdleCallback || function (f) { f(); })(start); }, 1200); };
+  // after the visitor's first tap, scroll or key, or 6 s after load: the still is what loads the page, the animation follows
+  var go = false, kick = function () { if (go) return; go = true; (window.requestIdleCallback || function (f) { f(); })(start); };
+  ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(function (t) { addEventListener(t, kick, { once: true, passive: true }); });
+  var later = function () { setTimeout(kick, 6000); };
   if (d.readyState === 'complete') later(); else addEventListener('load', later);
 })();
 
