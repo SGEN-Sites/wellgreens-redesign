@@ -111,7 +111,9 @@ html[data-splash="rise"] #wg-splash.wg-sp-out .wg-sp-bot { animation: wg-sp-up 0
 
 @keyframes wg-sp-wipe { to { -webkit-mask-position: 0 0; mask-position: 0 0; } }
 @keyframes wg-sp-scale { from { transform: scale(.94); } to { transform: none; } }
-@keyframes wg-sp-sheen { 0% { opacity: 0; left: -40%; } 25% { opacity: 1; } 100% { opacity: 0; left: 110%; } }
+/* moved with transform, not left: animating a position counts as layout shift on every frame (page speed, 2026-11-25).
+   The sheen sits at left -40% and is 38% wide, so the old -40% -> 110% run is translateX(395%) of its own width. */
+@keyframes wg-sp-sheen { 0% { opacity: 0; transform: translateX(0) skewX(-18deg); } 25% { opacity: 1; } 100% { opacity: 0; transform: translateX(395%) skewX(-18deg); } }
 @keyframes wg-sp-load { to { transform: scaleX(1); } }
 @keyframes wg-sp-fade { to { opacity: 1; } }
 @keyframes wg-sp-up { to { transform: translateY(-101%); } }

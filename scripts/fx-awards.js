@@ -35,7 +35,7 @@
 
   var layer = function (b, cls) {
     var el = d.createElement('i'); el.className = cls; el.setAttribute('aria-hidden', 'true');
-    el.style.setProperty('--wg-aw-src', b.src); b.card.appendChild(el); return el;
+    b.card.appendChild(el); return el;   // its picture (--wg-aw-src) is set as the section approaches (page speed)
   };
   var badges = [].slice.call(reg.children).filter(function (it) { return it.querySelector('img'); }).map(function (item, i) {
     var img = item.querySelector('img'), card = img.parentElement, group = card.parentElement;
@@ -47,6 +47,8 @@
     card.addEventListener('animationend', function (e) { if (e.animationName === 'wg-aw-sweep') card.classList.remove('wg-aw-sweep'); });
     return b;
   });
+  var armed = false, arm = function () { if (armed) return; armed = true; badges.forEach(function (b) { b.shine.style.setProperty('--wg-aw-src', b.src); b.mirror.style.setProperty('--wg-aw-src', b.src); }); };
+  if ('IntersectionObserver' in window) { var aio = new IntersectionObserver(function (es) { if (es.some(function (e) { return e.isIntersecting; })) { arm(); aio.disconnect(); } }, { rootMargin: '800px 0px' }); aio.observe(sec || reg); } else arm();
   var n = badges.length;
   if (n < 2) return;
 

@@ -210,8 +210,7 @@
     week.innerHTML = '<h2></h2>'; week.firstChild.textContent = ES ? 'Esta semana' : 'This week';
     info.forEach(function (x, i) {
       var b = d.createElement('button'); b.type = 'button';
-      b.innerHTML = '<img alt="" loading="lazy" decoding="async"><span><b></b><small></small></span>';
-      b.querySelector('img').src = x.img;
+      b.innerHTML = '<span><b></b><small></small></span>';   // no thumbnails (owner); none fetched either
       var bb = b.querySelector('b'); bb.textContent = x.day >= 0 ? dayName(x.day, 'long') : String(i + 1);
       if (x.day === laDay) { var em = d.createElement('em'); em.textContent = TODAY; bb.appendChild(em); }
       b.querySelector('small').textContent = x.offer;
@@ -334,7 +333,6 @@
     c.setAttribute('aria-hidden', 'true'); c.setAttribute('inert', ''); c.removeAttribute('role');
     [].forEach.call(c.querySelectorAll('[role="listitem"]'), function (x) { x.removeAttribute('role'); });
     [].forEach.call(c.querySelectorAll('a'), function (a) { a.setAttribute('tabindex', '-1'); });
-    [].forEach.call(c.querySelectorAll('img'), function (im) { im.loading = 'eager'; });
     track.appendChild(c); copies.push(c);
   };
   var wrap = function () { if (W > 0) { while (x <= -W) x += W; while (x > 0) x -= W; } };
@@ -441,4 +439,60 @@
 (function () {
   var quiet = function (e) { var vt = e && e.viewTransition; if (!vt) return; ['ready', 'finished', 'updateCallbackDone'].forEach(function (k) { if (vt[k] && vt[k].catch) vt[k].catch(function () {}); }); };
   addEventListener('pageswap', quiet); addEventListener('pagereveal', quiet);
+})();
+
+/* Daily deals (page speed, owner 2026-11-25): the banners are 8-frame animated GIFs, up to 1 MB each. Pages paint small
+   still WebP stand-ins (their first frame); once the page has loaded, the banner on screen swaps to its animation, and so
+   does each banner the visitor pages to. Reduced motion and Save-Data keep the stills. Runs with the replica too. */
+(function () {
+  'use strict';
+  var d = document, figs = [].slice.call(d.querySelectorAll('#daily-deals figure'));
+  if (!figs.length) return;
+  // the inline script after the hero parked every slide but today's: give them their pictures back once the page has
+  // loaded, or as soon as the visitor touches the hero (stills; the animation follows below)
+  var restored = false, restore = function () {
+    if (restored) return; restored = true;
+    [].forEach.call(d.querySelectorAll('#daily-deals [data-wg-srcset], #daily-deals [data-wg-src]'), function (el) {
+      var s = el.getAttribute('data-wg-srcset'), u = el.getAttribute('data-wg-src');
+      if (s) { el.setAttribute('srcset', s); el.removeAttribute('data-wg-srcset'); }
+      if (u) { el.setAttribute('src', u); el.removeAttribute('data-wg-src'); }
+    });
+  };
+  var hero = d.getElementById('hero') || d.getElementById('daily-deals');
+  if (hero) ['pointerdown', 'keydown', 'focusin'].forEach(function (t) { hero.addEventListener(t, restore, { once: true, passive: true }); });
+  if (d.readyState === 'complete') setTimeout(restore, 300); else { addEventListener('load', function () { setTimeout(restore, 300); }); setTimeout(restore, 6000); }
+  if ((window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) || (navigator.connection && navigator.connection.saveData)) return;
+  var read = function (el) { try { return JSON.parse(el.getAttribute('data-wg-anim') || 'null'); } catch (e) { return null; } };
+  var animate = function (fig) {
+    if (fig.wgAnimated) return; fig.wgAnimated = true; restore();
+    [].forEach.call(fig.querySelectorAll('[data-wg-anim]'), function (el) {
+      var a = read(el); if (!a) return;
+      if (a.srcset) el.srcset = a.srcset;
+      if (a.src && el.tagName === 'IMG') el.src = a.src;
+    });
+  };
+  var start = function () {
+    if (!('IntersectionObserver' in window)) { figs.forEach(animate); return; }
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { animate(e.target); io.unobserve(e.target); } }); }, { threshold: 0.6 });
+    figs.forEach(function (f) { io.observe(f); });
+  };
+  var later = function () { setTimeout(function () { (window.requestIdleCallback || function (f) { f(); })(start); }, 1200); };
+  if (d.readyState === 'complete') later(); else addEventListener('load', later);
+})();
+
+/* Instagram (page speed): post pictures and video posters are fetched as the section approaches, not with the page. */
+(function () {
+  'use strict';
+  var d = document, els = [].slice.call(d.querySelectorAll('[data-wg-bg], [data-wg-poster]'));
+  if (!els.length) return;
+  var read = function (el, k) { try { return JSON.parse(el.getAttribute(k) || 'null'); } catch (e) { return null; } };
+  var show = function (el) {
+    var bg = read(el, 'data-wg-bg'), po = read(el, 'data-wg-poster');
+    if (bg && bg.src) el.style.backgroundImage = 'url("' + bg.src + '")';
+    if (po && po.src) el.setAttribute('poster', po.src);
+    el.removeAttribute('data-wg-bg'); el.removeAttribute('data-wg-poster');
+  };
+  if (!('IntersectionObserver' in window)) { els.forEach(show); return; }
+  var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { show(e.target); io.unobserve(e.target); } }); }, { rootMargin: '800px 0px' });
+  els.forEach(function (el) { io.observe(el); });
 })();
