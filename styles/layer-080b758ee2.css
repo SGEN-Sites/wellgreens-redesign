@@ -175,8 +175,8 @@ html.wg-splash-pending body::after {
 #wg-splash.wg-sp-out .wg-sp-top { animation: wg-sp-up .72s var(--fx-ease-io) forwards; }
 #wg-splash.wg-sp-out .wg-sp-bot { animation: wg-sp-down .72s var(--fx-ease-io) forwards; }
 #wg-splash.wg-sp-out .wg-sp-stage, #wg-splash.wg-sp-out .wg-sp-grain { animation: wg-sp-stage-out .4s var(--fx-ease) forwards; }
-html.wg-splashing #site-content { transform: scale(.985); filter: blur(5px); transform-origin: 50% 30vh; }
-html.wg-splash-release #site-content { transform: none; filter: none; transition: transform .9s var(--fx-ease), filter .7s var(--fx-ease); }
+html.wg-splashing #site-content { opacity: .6; }
+html.wg-splash-release #site-content { opacity: 1; transition: opacity .9s var(--fx-ease); }
 html[data-splash="iris"] #wg-splash.wg-sp-out .wg-sp-top,
 html[data-splash="iris"] #wg-splash.wg-sp-out .wg-sp-bot { animation: none; }
 html[data-splash="iris"] #wg-splash.wg-sp-out { animation: wg-sp-iris .85s var(--fx-ease-io) forwards; }
@@ -665,6 +665,25 @@ html[data-fx="on"] section.relative.isolate.hidden .bg-secondary.rounded-2xl.p-6
 @media (min-width: 1280px) {
   html[data-fx="on"] section.relative.isolate.hidden .relative.z-10.flex.gap-10 { grid-template-columns: minmax(0, 1.3fr) repeat(3, minmax(0, 1fr)); }
   html[data-fx="on"] section.relative.isolate.hidden .relative.z-10.flex.gap-10 > div:first-child { grid-column: auto; margin-bottom: 0; padding-right: 1rem; }
+}
+html:not(.gates-hydrated):not(.gate-bypass):has(#age-verify-cb:not(:checked)),
+html:not(.gates-hydrated):not(.gate-bypass):has(#age-verify-cb:not(:checked)) body { overflow: hidden; }
+html:not(.gates-hydrated):not(.gate-bypass):has(#age-verify-cb:not(:checked)) body { position: fixed; top: 0; width: 100%; }
+html[data-fx="on"]:is([data-hero="split"], [data-hero="ambient"], [data-hero="peek"]) #daily-deals:not(:has(~ .wg-days)) { margin-bottom: calc(37px + .85rem); }
+@media (min-width: 900px) { html[data-fx="on"][data-hero="split"] #daily-deals:not(:has(~ .wg-days)) { margin-bottom: 0; } }
+html[data-fx="on"] { --header-banner-h: 25px; }
+@media (min-width: 640px) { html[data-fx="on"] { --header-banner-h: 24px; } }
+@media (min-width: 768px) { html[data-fx="on"] { --header-banner-h: 32px; } }
+html.wg-deals-pending #daily-deals > :first-child { scroll-snap-type: none !important; }
+@media (max-width: 639.98px) {
+  html[data-fx="on"] #daily-deals { margin-top: .85rem; }
+}
+@media (max-width: 767.98px) {
+  html[data-fx="on"] [class~="min-w-0"][class~="shrink-0"][class~="pt-20"][class~="pb-8"] {
+    padding-top: calc(var(--header-rest-h) - var(--header-extra-h) + var(--service-row-h) + 2rem);
+  }
+  html[data-fx="on"] .grid[class~="gap-px"][class~="auto-rows-max"][class~="bg-secondary"] { gap: .75rem; background: transparent; border-radius: 0; overflow: visible; }
+  html[data-fx="on"] .grid[class~="gap-px"][class~="auto-rows-max"][class~="bg-secondary"] .group { border-radius: 1rem; }
 }
 html[data-fx="on"] .wg-aw-sec .wg-aw-group { container-type: inline-size; }
 html[data-fx="on"] .wg-aw-sec .wg-aw-reg .wg-aw-card {

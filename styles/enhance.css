@@ -98,8 +98,10 @@ html.wg-splash-pending body::after {
 #wg-splash.wg-sp-out .wg-sp-top { animation: wg-sp-up .72s var(--fx-ease-io) forwards; }
 #wg-splash.wg-sp-out .wg-sp-bot { animation: wg-sp-down .72s var(--fx-ease-io) forwards; }
 #wg-splash.wg-sp-out .wg-sp-stage, #wg-splash.wg-sp-out .wg-sp-grain { animation: wg-sp-stage-out .4s var(--fx-ease) forwards; }
-html.wg-splashing #site-content { transform: scale(.985); filter: blur(5px); transform-origin: 50% 30vh; }
-html.wg-splash-release #site-content { transform: none; filter: none; transition: transform .9s var(--fx-ease), filter .7s var(--fx-ease); }
+/* the page settles in under the splash with a fade: a transform or filter here would make it the containing block of the
+   page's fixed decorations, which then jumped back when the splash ended (a layout shift; page speed, 2026-11-25) */
+html.wg-splashing #site-content { opacity: .6; }
+html.wg-splash-release #site-content { opacity: 1; transition: opacity .9s var(--fx-ease); }
 
 /* variant: iris — the field closes to a point over the logo */
 html[data-splash="iris"] #wg-splash.wg-sp-out .wg-sp-top,
@@ -697,4 +699,45 @@ html[data-fx="on"] section.relative.isolate.hidden .bg-secondary.rounded-2xl.p-6
 @media (min-width: 1280px) {
   html[data-fx="on"] section.relative.isolate.hidden .relative.z-10.flex.gap-10 { grid-template-columns: minmax(0, 1.3fr) repeat(3, minmax(0, 1fr)); }
   html[data-fx="on"] section.relative.isolate.hidden .relative.z-10.flex.gap-10 > div:first-child { grid-column: auto; margin-bottom: 0; padding-right: 1rem; }
+}
+
+/* ===================================================================== page speed: no layout shift when the scripts start
+   (2026-11-25: the scripts now run after the first painted frame, so what they change after it must already be in place) */
+/* first visit, age not confirmed yet: the page is locked from the first paint. site.js locks it too, a frame later; when it
+   did that alone, the desktop scrollbar disappearing re-flowed the whole page after it had painted (a layout shift). */
+html:not(.gates-hydrated):not(.gate-bypass):has(#age-verify-cb:not(:checked)),
+html:not(.gates-hydrated):not(.gate-bypass):has(#age-verify-cb:not(:checked)) body { overflow: hidden; }
+html:not(.gates-hydrated):not(.gate-bypass):has(#age-verify-cb:not(:checked)) body { position: fixed; top: 0; width: 100%; }
+/* the day chips enhance.js adds under the banner: their row is held open until they arrive (37px + their .85rem gap) */
+html[data-fx="on"]:is([data-hero="split"], [data-hero="ambient"], [data-hero="peek"]) #daily-deals:not(:has(~ .wg-days)) { margin-bottom: calc(37px + .85rem); }
+@media (min-width: 900px) { html[data-fx="on"][data-hero="split"] #daily-deals:not(:has(~ .wg-days)) { margin-bottom: 0; } }
+/* the header's height before site.js measures it: the source's --header-banner-h (28px / 35px) is taller than the ticker row
+   this layer draws (25 / 24 / 32px), so the header-height default came out 3px over and everything moved when site.js wrote
+   the measured value after the first paint. These are the drawn heights. */
+html[data-fx="on"] { --header-banner-h: 25px; }
+@media (min-width: 640px) { html[data-fx="on"] { --header-banner-h: 24px; } }
+@media (min-width: 768px) { html[data-fx="on"] { --header-banner-h: 32px; } }
+/* the deals track does not snap until the inline reorder (build.mjs todayFirst) has put today's slide first: a track laid out
+   earlier snapped to the source's first slide and then followed it to the end of the row (page speed, 2026-11-25) */
+html.wg-deals-pending #daily-deals > :first-child { scroll-snap-type: none !important; }
+
+/* ===================================================================== phone spacing (owner, 2026-11-25: "store selector is
+   too close to the deal banner ... fix similar issues throughout the site, at least for mobile view"). The store row under
+   the phone header is laid over the page (position: absolute), so each template pads for it; three did not, or stacked
+   cards with no air between them. */
+@media (max-width: 639.98px) {
+  /* home (EN + ES): the deal banner started flush under the store row; it now sits the same distance below it as the day
+     chips sit below the banner */
+  html[data-fx="on"] #daily-deals { margin-top: .85rem; }
+}
+@media (max-width: 767.98px) {
+  /* delivery-area pages (20 EN + 20 ES): the hero's fixed 5rem top padding cleared the store row by 3 px; now it uses the
+     site's own hero formula (.page-hero-pad: header + store row + 2rem), like every other page */
+  html[data-fx="on"] [class~="min-w-0"][class~="shrink-0"][class~="pt-20"][class~="pb-8"] {
+    padding-top: calc(var(--header-rest-h) - var(--header-extra-h) + var(--service-row-h) + 2rem);
+  }
+  /* Locations (EN + ES): the store cards, a 1-px hairline grid on wide screens, stacked into one dark column on a phone;
+     there they get their own rounded corners and the air of the site's other card lists */
+  html[data-fx="on"] .grid[class~="gap-px"][class~="auto-rows-max"][class~="bg-secondary"] { gap: .75rem; background: transparent; border-radius: 0; overflow: visible; }
+  html[data-fx="on"] .grid[class~="gap-px"][class~="auto-rows-max"][class~="bg-secondary"] .group { border-radius: 1rem; }
 }
