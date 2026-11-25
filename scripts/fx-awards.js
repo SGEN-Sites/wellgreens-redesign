@@ -94,7 +94,8 @@
   };
 
   var q; try { q = new URLSearchParams(location.search); } catch (e) { q = null; }
-  var v = q ? q.get('awards') : '', jump = !!q && q.get('jump') === '1';
+  // owner-locked default (2026-11-25): A · Coverflow; ?awards=default shows the plain 3D row, ?awards=ring the turntable
+  var v = (q && q.get('awards')) || 'coverflow', jump = !!q && q.get('jump') === '1';
   var io = 'IntersectionObserver' in window;
 
   if (v !== 'coverflow' && v !== 'ring') {
